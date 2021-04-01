@@ -85,7 +85,7 @@
     <string name="unit_kilometer">km</string>
     <string name="unit_mile">mi.</string>
     <string name="provide_valid_url">Zadejte platnou adresu URL serveru</string>
-    <string name="provide_user_pass_url">Nejprve zadejte uživatele, Název zařízení heslo a URL serveru</string>
+    <string name="provide_user_pass_url">Nejprve zadejte uživatele, heslo, název zařízení a URL serveru</string>
     <string name="e_illegal_state">Chyba nelegálního stavu: %s</string>
     <string name="e_illegal_redirect">Nelegální přesměrování: %d</string>
     <string name="e_auth_failure">Selhání autorizace: %d</string>

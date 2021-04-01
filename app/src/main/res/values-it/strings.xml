@@ -83,7 +83,7 @@
     <string name="unit_kilometer">km</string>
     <string name="unit_mile">miglia</string>
     <string name="provide_valid_url">Inserisci un URL valido</string>
-    <string name="provide_user_pass_url">Perfavore inserisci nome utente, password, nombre del dispositivo e indirizzo del server prima</string>
+    <string name="provide_user_pass_url">Immettere prima nome utente, password, nome del dispositivo e indirizzo del server</string>
     <string name="e_illegal_state">Errore stato illegale: %s</string>
     <string name="e_illegal_redirect">Reindirizzamento illegale: %d</string>
     <string name="e_auth_failure">Errore di autorizzazione: %d</string>

@@ -85,7 +85,7 @@
     <string name="unit_kilometer">km</string>
     <string name="unit_mile">mi</string>
     <string name="provide_valid_url">Podaj poprawny adres serwera</string>
-    <string name="provide_user_pass_url">Najpierw uzupełnij nazwę użytkownika, Nazwa urządzenia hasło i adres serwera</string>
+    <string name="provide_user_pass_url">Najpierw wprowadź nazwę użytkownika, nazwę urządzenia, hasło i adres serwera</string>
     <string name="e_illegal_state">Błędny stan: %s</string>
     <string name="e_illegal_redirect">Błąd przekierowania: %d</string>
     <string name="e_auth_failure">Błąd autoryzacji: %d</string>
