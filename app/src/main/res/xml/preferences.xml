@@ -49,6 +49,11 @@
             android:entries="@array/providersEntries"
             android:entryValues="@array/providersValues"
             app:useSimpleSummaryProvider="true" />
+        <net.fabiszewski.ulogger.TrimmedEditTextPreference
+            android:key="prefDevicename"
+            android:title="@string/pref_devicename_title"
+            android:dialogMessage="@string/pref_devicename_summary"
+            app:useSimpleSummaryProvider="true" />
         <SwitchPreferenceCompat
             android:key="prefLiveSync"
             android:title="@string/pref_livesync_title"

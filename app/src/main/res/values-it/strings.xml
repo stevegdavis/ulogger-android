@@ -27,6 +27,8 @@
     <string name="pref_pass_summary">Password dell’utente sul server remoto</string>
     <string name="pref_host_title">Indirizzo URL del server</string>
     <string name="pref_host_summary">Indirizzo URL base del server remoto</string>
+    <string name="pref_devicename_title">Nome del dispositivo</string>
+    <string name="pref_devicename_summary">Nome di questo dispositivo (Leggi solo per la creazione di una nuova traccia)</string>
     <string name="pref_mintime_title">Intervallo di aggiornamento</string>
     <string name="pref_mintime_summary">Tempo tra ogni aggiornamento della posizione</string>
     <string name="pref_mindistance_title">Distanza minima</string>
@@ -36,7 +38,7 @@
     <string name="pref_imagesize_title">Grandezza dell’immagine</string>
     <string name="pref_imagesize_summary">Massime dimensioni delle immagini caricate in pixel. In caso di ridimensionamento dell’immagine, una copia verrà salvata nella cartella dell’applicazione. Se scegli l’opzione “dimensioni effettive”, non ne verrà fatta una copia, dunque i file originali dovranno essere disponibili al momento dell’upload.</string>
     <string name="pref_livesync_title">Sincronizzazione live</string>
-    <string name="pref_livesync_summary">Caricamento continuo (live) delle posizioni al server. Richiede il nome utente, password e l’indirizzo del server.</string>
+    <string name="pref_livesync_summary">Caricamento continuo (live) delle posizioni al server. Richiede il nome utente, nome del dispositivo, password e l’indirizzo del server.</string>
     <string name="pref_autostart_title">Avvio automatico</string>
     <string name="pref_autostart_summary">L’applicazione sì avvierà all’accensione del dispositivo</string>
     <string name="pref_external_title">Consenti comandi esterni</string>
@@ -81,7 +83,7 @@
     <string name="unit_kilometer">km</string>
     <string name="unit_mile">miglia</string>
     <string name="provide_valid_url">Inserisci un URL valido</string>
-    <string name="provide_user_pass_url">Perfavore inserisci nome utente, password e indirizzo del server prima</string>
+    <string name="provide_user_pass_url">Perfavore inserisci nome utente, password, nombre del dispositivo e indirizzo del server prima</string>
     <string name="e_illegal_state">Errore stato illegale: %s</string>
     <string name="e_illegal_redirect">Reindirizzamento illegale: %d</string>
     <string name="e_auth_failure">Errore di autorizzazione: %d</string>

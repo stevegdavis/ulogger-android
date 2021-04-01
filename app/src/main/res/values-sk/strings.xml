@@ -27,6 +27,8 @@
     <string name="pref_pass_summary">Heslo na vzdialenom servery</string>
     <string name="pref_host_title">URL servera</string>
     <string name="pref_host_summary">Základná URL vzdialeného servera</string>
+    <string name="pref_devicename_title">Názov zariadenia</string>
+    <string name="pref_devicename_summary">Názov tohto zariadenia (čítať iba pri vytváraní novej stopy)</string>
     <string name="pref_mintime_title">Minimálny čas</string>
     <string name="pref_mintime_summary">Minimálny čas medzi aktualizáciami polohy</string>
     <string name="pref_mindistance_title">Minimálna vzdialenosť</string>
@@ -83,7 +85,7 @@
     <string name="unit_kilometer">km</string>
     <string name="unit_mile">mi.</string>
     <string name="provide_valid_url">Prosím, zadajte platnú URL adresu.</string>
-    <string name="provide_user_pass_url">Prosím, najskôr zadajte meno používateľa, heslo a adresu servera</string>
+    <string name="provide_user_pass_url">Najskôr zadajte používateľské meno, heslo, názov zariadenia a adresu servera</string>
     <string name="e_illegal_state">Chyba nepovoleného stavu: %s</string>
     <string name="e_illegal_redirect">Nepovolené presmerovanie: %d</string>
     <string name="e_auth_failure">Prihlásenie sa nepodarilo: %d</string>

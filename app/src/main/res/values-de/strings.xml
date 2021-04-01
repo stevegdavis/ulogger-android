@@ -27,6 +27,8 @@
     <string name="pref_pass_summary">Server-Passwort</string>
     <string name="pref_host_title">Server-URL</string>
     <string name="pref_host_summary">Server-URL</string>
+    <string name="pref_devicename_title">Gerätename</string>
+    <string name="pref_devicename_summary">Name dieses Geräts (Nur bei der Erstellung neuer Titel lesen)</string>
     <string name="pref_mintime_title">Mindester Zeitabstand</string>
     <string name="pref_mintime_summary">Mindeste Zeit zwischen Positionen</string>
     <string name="pref_mindistance_title">Mindeste Entfernung</string>
@@ -36,7 +38,7 @@
     <string name="pref_imagesize_title">Bildgröße</string>
     <string name="pref_imagesize_summary">Maximale Breite/Höhe des hochgeladenen Bildes in Pixeln. Ein evtl verkeinertes Bild wird vorübergehend im App-Ordner gespeichert. Wenn du \"tatsächliche Größe\" wählst, wird keine Kopie angelegt und die Originaldatei muss während des Uploads verfügbar sein.</string>
     <string name="pref_livesync_title">Live-Synchronisation</string>
-    <string name="pref_livesync_summary">Live-Synchronisation mit Server. Gültiger Server/Benutzername/Passwort erforderlich.</string>
+    <string name="pref_livesync_summary">Live-Synchronisation mit Server. Gültiger Server/Benutzername/Passwort/Gerätename erforderlich.</string>
     <string name="pref_autostart_title">Autostart</string>
     <string name="pref_autostart_summary">Applikation beim Booten starten</string>
     <string name="pref_external_title">Aufrufe von dritten Applikation zulassen</string>
@@ -81,7 +83,7 @@
     <string name="unit_kilometer">km</string>
     <string name="unit_mile">mi</string>
     <string name="provide_valid_url">Bitte gültige Server-URL angeben</string>
-    <string name="provide_user_pass_url">Bitte zuerst Benutzername, Passwort und Server-URL angeben</string>
+    <string name="provide_user_pass_url">Bitte zuerst Benutzername, Passwort, Gerätename und Server-URL angeben</string>
     <string name="e_illegal_state">Ungültige Zustand Fehler: %s</string>
     <string name="e_illegal_redirect">Ungültige Weiterleitung: %d</string>
     <string name="e_auth_failure">Anmeldefehler: %d</string>

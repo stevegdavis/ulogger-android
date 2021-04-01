@@ -27,6 +27,8 @@
     <string name="pref_pass_summary">Contrasenya de l’usuari al servidor remot</string>
     <string name="pref_host_title">URL del servidor</string>
     <string name="pref_host_summary">URL base del servidor remot</string>
+    <string name="pref_devicename_title">Nom del dispositiu</string>
+    <string name="pref_devicename_summary">Nom d\'aquest dispositiu (només llegit a la creació de pistes noves)</string>
     <string name="pref_mintime_title">Temps mínim</string>
     <string name="pref_mintime_summary">Temps mínim entre actualizacions de l’ubicació</string>
     <string name="pref_mindistance_title">Distància mínima</string>
@@ -36,7 +38,7 @@
     <string name="pref_imagesize_title">Tamany de l’imatge</string>
     <string name="pref_imagesize_summary">Ampla i alçada màximes de les imatges pujades, en píxels. En cas de reducció, la còpia de la imatge redimensionada s’emmagatzemarà temporalment a la carpeta de l’aplicació abans de pujar-la. Si trieu l’opció “mida actuall”, no es farà cap còpia, els fitxers originals han d’estar disponibles durant la càrrega.</string>
     <string name="pref_livesync_title">Sincronització contínua</string>
-    <string name="pref_livesync_summary">Pujada contínua de posicions cap al servidor. Requereix usuari, contrasenya i la url del servidor vàlids.</string>
+    <string name="pref_livesync_summary">Pujada contínua de posicions cap al servidor. Requereix usuari, contrasenya, nom del dispositiu i la url del servidor vàlids.</string>
     <string name="pref_autostart_title">Inici automàtic</string>
     <string name="pref_autostart_summary">L’aplicació s’iniciarà a l’arrancar el sistema</string>
     <string name="pref_external_title">Permetre comandes externes</string>
@@ -81,7 +83,7 @@
     <string name="unit_kilometer">km</string>
     <string name="unit_mile">mi.</string>
     <string name="provide_valid_url">Si us plau, indica una url de servidor vàlida</string>
-    <string name="provide_user_pass_url">Si us plau, indica primer l’usuari, contrasenya i url del servidor</string>
+    <string name="provide_user_pass_url">Si us plau, indica primer l’usuari, contrasenya, nom del dispositiu, i url del servidor</string>
     <string name="e_illegal_state">Excepció d’estat il·legal: %s</string>
     <string name="e_illegal_redirect">Redirecció il·legal: %d</string>
     <string name="e_auth_failure">Error d’autenticació: %d</string>

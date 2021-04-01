@@ -110,7 +110,7 @@ public class WebSyncService extends JobIntentService {
                 return trackId;
             }
             try {
-                trackId = web.startTrack(trackName);
+                trackId = web.startTrack(trackName, WebHelper.devicename);
                 db.setTrackId(trackId);
             } catch (IOException e) {
                 if (Logger.DEBUG) { Log.d(TAG, "[websync io exception: " + e + "]"); }
@@ -122,7 +122,7 @@ public class WebSyncService extends JobIntentService {
                 try {
                     // reauthorize and retry
                     web.authorize();
-                    trackId = web.startTrack(trackName);
+                    trackId = web.startTrack(trackName,WebHelper.devicename);
                     db.setTrackId(trackId);
                 } catch (WebAuthException|IOException|JSONException e2) {
                     // schedule retry

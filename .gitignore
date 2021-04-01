@@ -3,6 +3,7 @@
 projectFilesBackup/
 
 # Created by https://www.gitignore.io/api/android
+build.gradle
 
 ### Android ###
 # Built application files

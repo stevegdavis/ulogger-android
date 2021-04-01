@@ -27,6 +27,8 @@
     <string name="pref_pass_summary">Urruneko zerbitzariko pasahitza</string>
     <string name="pref_host_title">Zerbitzariko URLa</string>
     <string name="pref_host_summary">Urruneko zerbitzariko oinarri URLa</string>
+    <string name="pref_devicename_title">Gailuaren izena</string>
+    <string name="pref_devicename_summary">Gailu honen izena (Irakurri pista berriak sortzeko soilik)</string>
     <string name="pref_mintime_title">Denbora tarte minimoa</string>
     <string name="pref_mintime_summary">Denbora tarte minimoa eguneratzeen artean</string>
     <string name="pref_mindistance_title">Distantzia minimoa</string>
@@ -36,7 +38,7 @@
     <string name="pref_imagesize_title">Irudi tamaina</string>
     <string name="pref_imagesize_summary">Igotako irudien tamaina maximoa, zabalera/altuera pixeletan. Irudia txikiagotuz gero, behin behineko kopia bat gordeko da aplikazioaren karpetan igo aurretik. \"Jatorrizko tamaina\" aukeratzen baduzu ez da kopiarik gordeko, hortaz, igoerak dirauen bitartean irudiaren fitxategi originalek eskuragarri egon behar dute</string>
     <string name="pref_livesync_title">Zuzeneko sinkronizazioa</string>
-    <string name="pref_livesync_summary">Kokapena zuzenean zerbitzarira igo. Baliozko erabiltzaile, pasahitz eta zerbitzariaren URLa behar ditu</string>
+    <string name="pref_livesync_summary">Kokapena zuzenean zerbitzarira igo. Baliozko erabiltzaile, gailuaren izena pasahitz eta zerbitzariaren URLa behar ditu</string>
     <string name="pref_autostart_title">Automatikoki hasi </string>
     <string name="pref_autostart_summary">Aplikazioa sistema abiatzean automatikoki hasiko da</string>
     <string name="pref_external_title">Kanpoko komandoak onartu</string>
@@ -81,7 +83,7 @@
     <string name="unit_kilometer">km</string>
     <string name="unit_mile">mi.</string>
     <string name="provide_valid_url">Mesedez, ezarri baliozko URLa</string>
-    <string name="provide_user_pass_url">Mesedez, sartu lehenengo erabiltzailea, pasahitza eta zerbitzariko URLa</string>
+    <string name="provide_user_pass_url">Mesedez, sartu lehenengo erabiltzailea, pasahitza, gailuaren izena eta zerbitzariko URLa</string>
     <string name="e_illegal_state">Egoera ilegala errorea: %s</string>
     <string name="e_illegal_redirect">Berbideraketa ilegala: %d</string>
     <string name="e_auth_failure">Authorization failure: %d</string>

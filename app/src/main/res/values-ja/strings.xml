@@ -27,6 +27,8 @@
     <string name="pref_pass_summary">リモートサーバーのユーザーパスワード</string>
     <string name="pref_host_title">サーバー URL</string>
     <string name="pref_host_summary">リモートサーバーのベース URL</string>
+    <string name="pref_devicename_title">装置名</string>
+    <string name="pref_devicename_summary">このデバイスの名前（新しいトラックの作成でのみ読む）</string>
     <string name="pref_mintime_title">最小時間</string>
     <string name="pref_mintime_summary">位置を更新する間隔の最小時間</string>
     <string name="pref_mindistance_title">最小距離</string>
@@ -34,7 +36,7 @@
     <string name="pref_minaccuracy_title">最小精度</string>
     <string name="pref_minaccuracy_summary">場所の最小精度</string>
     <string name="pref_livesync_title">ライブ同期</string>
-    <string name="pref_livesync_summary">場所のサーバーへのライブアップロード。 有効なユーザー名、パスワード、サーバー URL が必要です。</string>
+    <string name="pref_livesync_summary">その場所のサーバーへのライブアップロード。有効なユーザー名、パスワード、デバイス名、サーバーURLが必要です。</string>
     <string name="pref_autostart_title">自動開始</string>
     <string name="pref_autostart_summary">システム起動時にアプリケーションが開始します</string>
     <string name="pref_provider_title">位置プロバイダー</string>
@@ -72,7 +74,7 @@
     <string name="unit_kilometer">km</string>
     <string name="unit_mile">mi.</string>
     <string name="provide_valid_url">正しいサーバー URL を入力してください</string>
-    <string name="provide_user_pass_url">まずユーザー、パスワード、サーバー URL を入力してください</string>
+    <string name="provide_user_pass_url">まず、ユーザー、パスワード、デバイス名、サーバーのURLを入力します</string>
     <string name="e_illegal_redirect">不正なリダイレクト: %d</string>
     <string name="e_auth_failure">認証に失敗: %d</string>
     <string name="e_http_code">HTTP エラーコード: %d</string>

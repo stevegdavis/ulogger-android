@@ -27,6 +27,8 @@
     <string name="pref_pass_summary">Mot de passe sur le serveur distant</string>
     <string name="pref_host_title">Adresse du serveur</string>
     <string name="pref_host_summary">Adresse racine du serveur distant</string>
+    <string name="pref_devicename_title">Nom de l\'appareil</string>
+    <string name="pref_devicename_summary">Nom de cet appareil (à lire uniquement lors de la création d\'une nouvelle piste)</string>
     <string name="pref_mintime_title">Temps minimum</string>
     <string name="pref_mintime_summary">Temps minimum entre chaque enregistrement de position</string>
     <string name="pref_mindistance_title">Distance minimum</string>
@@ -36,7 +38,7 @@
     <string name="pref_imagesize_title">Taille d’image</string>
     <string name="pref_imagesize_summary">Largeur/hauteur maximale des images téléchargées en pixels. En cas de sous-échantillonnage, les images redimensionnées seront temporairement stockées dans le dossier d’application avant d’être téléverséess. Si vous choisissez l’option \"taille native\", aucune copie ne sera faite, les fichiers originaux doivent donc être disponibles pendant le téléchargement.</string>
     <string name="pref_livesync_title">Synchronisation immédiate</string>
-    <string name="pref_livesync_summary">Mise à jour directe de la position sur le serveur. Nécessite un nom d’utilisateur, un mot de passe et une adresse de serveur valide.</string>
+    <string name="pref_livesync_summary">Mise à jour directe de la position sur le serveur. Nécessite un nom d’utilisateur, nom de l\'appareil un mot de passe et une adresse de serveur valide.</string>
     <string name="pref_autostart_title">Enregistrement automatique</string>
     <string name="pref_autostart_summary">L’application enregistrera au démarrage du téléphone</string>
     <string name="pref_external_title">Autoriser les actions externes</string>
@@ -81,7 +83,7 @@
     <string name="unit_kilometer">km</string>
     <string name="unit_mile">mi.</string>
     <string name="provide_valid_url">Merci de remplir une adresse de serveur valide</string>
-    <string name="provide_user_pass_url">Merci d’entrer un nom d’utilisateur, un mot de passe et une adresse de serveur</string>
+    <string name="provide_user_pass_url">Merci d’entrer un nom d’utilisateur, un mot de passe, nom de l\'appareil et une adresse de serveur</string>
     <string name="e_illegal_state">Erreur d’état : %s</string>
     <string name="e_illegal_redirect">Redirection illégale : %d</string>
     <string name="e_auth_failure">Erreur d’authentification : %d</string>

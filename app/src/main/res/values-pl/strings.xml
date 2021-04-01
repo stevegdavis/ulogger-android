@@ -27,6 +27,8 @@
     <string name="pref_pass_summary">Hasło użytkownika na serwerze</string>
     <string name="pref_host_title">Adres serwera</string>
     <string name="pref_host_summary">Adres zdalnego serwera</string>
+    <string name="pref_devicename_title">Nazwa urządzenia</string>
+    <string name="pref_devicename_summary">Nazwa tego urządzenia (tylko czytaj przy tworzeniu nowej ścieżki)</string>
     <string name="pref_mintime_title">Minimalny czas</string>
     <string name="pref_mintime_summary">Minimalny czas pomiędzy kolejnymi pozycjami</string>
     <string name="pref_mindistance_title">Minimalna odległość</string>
@@ -36,7 +38,7 @@
     <string name="pref_imagesize_title">Rozmiar zdjęcia</string>
     <string name="pref_imagesize_summary">Maksymalna wysokość/szerokość przesyłanych zdjęć. W przypadku zmniejszania rozmiaru, kopia obrazu przed wysłaniem będzie przechowywana tymczasowo w folderze aplikacji. W przypadku wybrania opcji „bez zmian”, oryginalny plik musi być dostępny podczas synchronizacji, ponieważ kopia obrazu nie jest tworzona.</string>
     <string name="pref_livesync_title">Ciągła synchronizacja</string>
-    <string name="pref_livesync_summary">Wysyłanie pozycji na serwer w czasie rzeczywistym. Wymaga podania użytkownika, hasła i adresu serwera.</string>
+    <string name="pref_livesync_summary">Wysyłanie pozycji na serwer w czasie rzeczywistym. Wymaga podania użytkownika, Nazwa urządzenia, hasła i adresu serwera.</string>
     <string name="pref_autostart_title">Auto start</string>
     <string name="pref_autostart_summary">Aplikacja zostanie uruchomiona przy starcie systemu</string>
     <string name="pref_external_title">Zezwalaj na sterowanie</string>
@@ -83,7 +85,7 @@
     <string name="unit_kilometer">km</string>
     <string name="unit_mile">mi</string>
     <string name="provide_valid_url">Podaj poprawny adres serwera</string>
-    <string name="provide_user_pass_url">Najpierw uzupełnij nazwę użytkownika, hasło i adres serwera</string>
+    <string name="provide_user_pass_url">Najpierw uzupełnij nazwę użytkownika, Nazwa urządzenia hasło i adres serwera</string>
     <string name="e_illegal_state">Błędny stan: %s</string>
     <string name="e_illegal_redirect">Błąd przekierowania: %d</string>
     <string name="e_auth_failure">Błąd autoryzacji: %d</string>

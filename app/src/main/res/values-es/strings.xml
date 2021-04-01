@@ -27,6 +27,8 @@
     <string name="pref_pass_summary">Contraseña del usuario en el servidor remoto</string>
     <string name="pref_host_title">URL del servidor</string>
     <string name="pref_host_summary">URL base del servidor remoto</string>
+    <string name="pref_devicename_title">Nombre del dispositivo</string>
+    <string name="pref_devicename_summary">Nombre de este dispositivo (Leer solo en la creación de pistas nuevas)</string>
     <string name="pref_mintime_title">Tiempo mínimo</string>
     <string name="pref_mintime_summary">Tiempo mínimo entre actualizaciones de ubicación</string>
     <string name="pref_mindistance_title">Distancia mínima</string>
@@ -36,7 +38,7 @@
     <string name="pref_imagesize_title">Tamaño de la imagen</string>
     <string name="pref_imagesize_summary">Máxima anchura/altura de la imagen a cargar, en píxeles. En caso de reducción de la imagen, una copia se guardará en la aplicación antes de cargarla. Si escoge la opción “Tamaño actual” no se guardará una copia, las imágenes originales deberán estar disponibles durante la carga.</string>
     <string name="pref_livesync_title">Sincronización continua</string>
-    <string name="pref_livesync_summary">Subida continua de posiciones al servidor. Requiere un usuario, contraseña y URL de servidor válidos.</string>
+    <string name="pref_livesync_summary">Subida continua de posiciones al servidor. Requiere un usuario, nombre del dispositivo contraseña y URL de servidor válidos.</string>
     <string name="pref_autostart_title">Inicio automático</string>
     <string name="pref_autostart_summary">La aplicación se iniciará al arrancar el sistema</string>
     <string name="pref_external_title">Permitir comandos externos</string>
@@ -81,7 +83,7 @@
     <string name="unit_kilometer">km</string>
     <string name="unit_mile">mi.</string>
     <string name="provide_valid_url">Por favor, indica una URL de servidor válida</string>
-    <string name="provide_user_pass_url">Por favor, indica primero el usuario, contraseña y URL del servidor</string>
+    <string name="provide_user_pass_url">Por favor, indica primero el usuario, contraseña, nombre del dispositivo y URL del servidor</string>
     <string name="e_illegal_state">Excepción de estado ilegal: %s</string>
     <string name="e_illegal_redirect">Redirección ilegal: %d</string>
     <string name="e_auth_failure">Fallo de autenticación: %d</string>

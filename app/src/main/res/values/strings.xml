@@ -29,6 +29,8 @@
     <string name="pref_pass_summary">User password on remote server</string>
     <string name="pref_host_title">Server URL</string>
     <string name="pref_host_summary">Base URL of the remote server</string>
+    <string name="pref_devicename_title">Device Name</string>
+    <string name="pref_devicename_summary">Name of this device (Read on New track creation only)</string>
     <string name="pref_mintime_title">Minimum time</string>
     <string name="pref_mintime_summary">Minimum time between location updates</string>
     <string name="pref_mintime_default" translatable="false">30</string>
@@ -42,7 +44,7 @@
     <string name="pref_imagesize_summary">Maximum width/height of uploaded images in pixels. In case of downsampling resized image copy will be temporarily stored in application folder before uploading. If you choose “actual size” option no copy will be made, so original files must be available during uploading.</string>
     <string name="pref_imagesize_default" translatable="false">800</string>
     <string name="pref_livesync_title">Live synchronization</string>
-    <string name="pref_livesync_summary">Live uploading of positions to the server. Requires valid user name, password and server URL.</string>
+    <string name="pref_livesync_summary">Live uploading of positions to the server. Requires valid user name, password, device name and server URL.</string>
     <string name="pref_livesync_default" translatable="false">false</string>
     <string name="pref_autostart_title">Auto start</string>
     <string name="pref_autostart_summary">Application will start on system boot</string>
@@ -94,7 +96,7 @@
     <string name="unit_kilometer">km</string>
     <string name="unit_mile">mi.</string>
     <string name="provide_valid_url">Please provide valid server URL</string>
-    <string name="provide_user_pass_url">Please enter user, password and server URL first</string>
+    <string name="provide_user_pass_url">Please enter user, password, device name, server URL and this device name first</string>
     <string name="e_illegal_state">Illegal state error: %s</string>
     <string name="e_illegal_redirect">Illegal redirect: %d</string>
     <string name="e_auth_failure">Authorization failure: %d</string>

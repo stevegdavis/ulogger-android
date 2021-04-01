@@ -42,6 +42,7 @@ import static net.fabiszewski.ulogger.SettingsActivity.KEY_HOST;
 import static net.fabiszewski.ulogger.SettingsActivity.KEY_LIVE_SYNC;
 import static net.fabiszewski.ulogger.SettingsActivity.KEY_PASS;
 import static net.fabiszewski.ulogger.SettingsActivity.KEY_PROVIDER;
+import static net.fabiszewski.ulogger.SettingsActivity.KEY_DEVICENAME;
 import static net.fabiszewski.ulogger.SettingsActivity.KEY_USERNAME;
 
 @SuppressWarnings("WeakerAccess")
@@ -94,12 +95,16 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         final Preference prefUsername = findPreference(KEY_USERNAME);
         final Preference prefPass = findPreference(KEY_PASS);
         final Preference prefHost = findPreference(KEY_HOST);
+		final Preference prefDevicename = findPreference(KEY_DEVICENAME);
         // on change listeners
         if (prefLiveSync != null) {
             prefLiveSync.setOnPreferenceChangeListener(liveSyncChanged);
         }
         if (prefUsername != null) {
             prefUsername.setOnPreferenceChangeListener(serverSetupChanged);
+        }
+		if (prefDevicename != null) {
+            prefDevicename.setOnPreferenceChangeListener(serverSetupChanged);
         }
         if (prefPass != null) {
             prefPass.setOnPreferenceChangeListener(serverSetupChanged);
@@ -222,9 +227,11 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         final String host = prefs.getString(KEY_HOST, null);
         final String user = prefs.getString(KEY_USERNAME, null);
         final String pass = prefs.getString(KEY_PASS, null);
+        final String devicename = prefs.getString(KEY_DEVICENAME, null);
         return ((host != null && !host.isEmpty())
                 && (user != null && !user.isEmpty())
-                && (pass != null && !pass.isEmpty()));
+                && (pass != null && !pass.isEmpty())
+                && (devicename != null && !devicename.isEmpty()));
     }
 
     /**

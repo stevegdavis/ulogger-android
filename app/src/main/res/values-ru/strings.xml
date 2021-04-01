@@ -27,6 +27,8 @@
     <string name="pref_pass_summary">Пароль на удаленном сервере</string>
     <string name="pref_host_title">Адрес сервера</string>
     <string name="pref_host_summary">Ссылка на удаленный сервер</string>
+    <string name="pref_devicename_title">Имя устройства</string>
+    <string name="pref_devicename_summary">Имя этого устройства (читайте только при создании новой дорожки)</string>
     <string name="pref_mintime_title">Минимальное время</string>
     <string name="pref_mintime_summary">Минимальное время между обновлениями геопозиции</string>
     <string name="pref_mindistance_title">Минимальная дистанция</string>
@@ -36,7 +38,7 @@
     <string name="pref_imagesize_title">Размер изображения</string>
     <string name="pref_imagesize_summary">Максимальная ширина/высота загружаемых изображений в пикселях. В случае понижающей дискретизации копия изображения с измененным размером будет временно сохранена в папке приложения перед загрузкой. Если вы выберете опцию «Фактический размер», копии не будут созданы, поэтому исходные файлы должны быть доступны во время загрузки.</string>
     <string name="pref_livesync_title">Синхронизация в реальном времени</string>
-    <string name="pref_livesync_summary">Для синхронизация с сервером в реальном времени необходимо указать действительное имя пользователя, пароль и гиперссылку на сервер.</string>
+    <string name="pref_livesync_summary">Для синхронизация с сервером в реальном времени необходимо указать действительное имя пользователя, имя устройства, пароль и гиперссылку на сервер.</string>
     <string name="pref_autostart_title">Автоматический старт</string>
     <string name="pref_autostart_summary">Приложение будет запускаться при загрузке системы</string>
     <string name="pref_external_title">Разрешить внешнее управление</string>
@@ -83,7 +85,7 @@
     <string name="unit_kilometer">км</string>
     <string name="unit_mile">мили</string>
     <string name="provide_valid_url">Пожалуйста укажите действительную ссылку на сервер</string>
-    <string name="provide_user_pass_url">Пожалуйста, сначала введите имя пользователя, пароль и ссылку на сервер. </string>
+    <string name="provide_user_pass_url">Пожалуйста, сначала введите свое имя пользователя, пароль, имя устройства и ссылку на сервер. </string>
     <string name="e_illegal_state">Ошибка, недопустимое значение: %s</string>
     <string name="e_illegal_redirect">Неправильная переадресация: %d</string>
     <string name="e_auth_failure">Ошибка авторизации: %d</string>

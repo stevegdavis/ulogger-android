@@ -67,6 +67,7 @@ class WebHelper {
     private static String host;
     private static String user;
     private static String pass;
+    public static String devicename;
 
     private static final String CLIENT_SCRIPT = "client/index.php";
     private static final String PARAM_ACTION = "action";
@@ -82,6 +83,7 @@ class WebHelper {
     static final String PARAM_ACCURACY = "accuracy";
     static final String PARAM_PROVIDER = "provider";
     static final String PARAM_COMMENT = "comment";
+	static final String PARAM_DEVICE_NAME = "devicename";
     static final String PARAM_IMAGE = "image";
     static final String PARAM_TRACKID = "trackid";
 
@@ -407,11 +409,12 @@ class WebHelper {
      * @throws IOException Connection error
      * @throws WebAuthException Authorization error
      */
-    int startTrack(String name) throws IOException, WebAuthException {
-        if (Logger.DEBUG) { Log.d(TAG, "[startTrack: " + name + "]"); }
+    int startTrack(String trackname, String devicename) throws IOException, WebAuthException {
+        if (Logger.DEBUG) { Log.d(TAG, "[startTrack: " + trackname + "]"); }
         Map<String, String> params = new HashMap<>();
         params.put(PARAM_ACTION, ACTION_ADDTRACK);
-        params.put(PARAM_TRACK, name);
+        params.put(PARAM_TRACK, trackname);
+        params.put(PARAM_DEVICE_NAME, devicename);
         try {
             String response = postWithParams(params);
             JSONObject json = new JSONObject(response);
@@ -468,6 +471,7 @@ class WebHelper {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         user = prefs.getString(SettingsActivity.KEY_USERNAME, "NULL");
         pass = prefs.getString(SettingsActivity.KEY_PASS, "NULL");
+        devicename = prefs.getString(SettingsActivity.KEY_DEVICENAME, "NULL");
         host = prefs.getString(SettingsActivity.KEY_HOST, "NULL").replaceAll("/+$", "");
     }
 

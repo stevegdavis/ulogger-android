@@ -29,6 +29,7 @@ public class SettingsActivity extends AppCompatActivity {
     public static final String KEY_IMAGE_SIZE = "prefImageSize";
     public static final String KEY_PASS = "prefPass";
     public static final String KEY_PROVIDER = "prefProvider";
+	public static final String KEY_DEVICENAME = "prefDevicename";
     public static final String KEY_UNITS = "prefUnits";
     public static final String KEY_USERNAME = "prefUsername";
     public static final String KEY_USE_GPS = "prefUseGps";

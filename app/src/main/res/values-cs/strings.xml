@@ -27,6 +27,8 @@
     <string name="pref_pass_summary">Heslo uživatele na vzdáleném serveru</string>
     <string name="pref_host_title">URL Serveru</string>
     <string name="pref_host_summary">Základní URL vzdáleného serveru</string>
+    <string name="pref_devicename_title">Název zařízení</string>
+    <string name="pref_devicename_summary">Název tohoto zařízení (Číst pouze při vytváření nové stopy)</string>
     <string name="pref_mintime_title">Minimální doba</string>
     <string name="pref_mintime_summary">Minimální doba mezi aktualizacemi umístění</string>
     <string name="pref_mindistance_title">Minimální vzdálenost</string>
@@ -36,7 +38,7 @@
     <string name="pref_imagesize_title">Velikost obrázku</string>
     <string name="pref_imagesize_summary">Maximální šířka / výška nahraných obrázků v pixelech. V případě převzorkování ve zmenšené velikosti bude kopie dočasně uložena do složky aplikace před nahráním. Pokud zvolíte možnost „skutečná velikost“, nebude vytvořena žádná kopie, takže během nahrávání musí být k dispozici původní soubory.</string>
     <string name="pref_livesync_title">Okamžitá synchronizace</string>
-    <string name="pref_livesync_summary">Okamžité nahrávání pozic na server. Vyžaduje platné uživatelské jméno, heslo a URL serveru.</string>
+    <string name="pref_livesync_summary">Okamžité nahrávání pozic na server. Vyžaduje platné uživatelské jméno, Název zařízení heslo a URL serveru.</string>
     <string name="pref_autostart_title">Automatický start</string>
     <string name="pref_autostart_summary">Aplikace se spustí při startu systému</string>
     <string name="pref_external_title">Povolit externí příkazy</string>
@@ -83,7 +85,7 @@
     <string name="unit_kilometer">km</string>
     <string name="unit_mile">mi.</string>
     <string name="provide_valid_url">Zadejte platnou adresu URL serveru</string>
-    <string name="provide_user_pass_url">Nejprve zadejte uživatele, heslo a URL serveru</string>
+    <string name="provide_user_pass_url">Nejprve zadejte uživatele, Název zařízení heslo a URL serveru</string>
     <string name="e_illegal_state">Chyba nelegálního stavu: %s</string>
     <string name="e_illegal_redirect">Nelegální přesměrování: %d</string>
     <string name="e_auth_failure">Selhání autorizace: %d</string>
