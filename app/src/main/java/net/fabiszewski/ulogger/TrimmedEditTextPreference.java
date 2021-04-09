@@ -10,8 +10,10 @@
 package net.fabiszewski.ulogger;
 
 import android.content.Context;
+import android.text.InputFilter;
 import android.util.AttributeSet;
 
+import androidx.annotation.Nullable;
 import androidx.preference.EditTextPreference;
 
 /**
@@ -39,7 +41,10 @@ class TrimmedEditTextPreference extends EditTextPreference {
 
     @Override
     public void setText(String text) {
+        if(this.getTitle().toString().contains("Device Name")) {
+            if(text.length() > 10)
+                text = text.substring(0, 10);
+        }
         super.setText(text.trim());
     }
-
 }
