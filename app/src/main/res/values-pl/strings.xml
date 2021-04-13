@@ -137,6 +137,7 @@
     <string name="label_waypoint_description">Opis punktu</string>
     <string name="label_add_photo">Dodaj zdjęcie</string>
     <string name="button_save">Zapisz</string>
+    <string name="button_share_current_location">Udostępnij aktualną lokalizację</string>
     <string name="tracking">Śledzenie</string>
     <string name="clear">Usuń trasę</string>
     <string name="share_link">Udostępnij link do trasy</string>

@@ -133,6 +133,7 @@
     <string name="label_waypoint_description">Bide-puntuaren deskribapena</string>
     <string name="label_add_photo">Argazkia gehitu</string>
     <string name="button_save">Gorde</string>
+    <string name="button_share_current_location">Partekatu uneko kokapena</string>
     <string name="tracking">Jarraipena egiten</string>
     <string name="clear">Ibilbidea garbitu</string>
     <string name="share_link">Ibilbidearen lotura partekatu</string>

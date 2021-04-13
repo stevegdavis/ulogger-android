@@ -133,6 +133,7 @@
     <string name="label_waypoint_description">Descripció del punt de pas</string>
     <string name="label_add_photo">Afegir foto</string>
     <string name="button_save">Desar</string>
+    <string name="button_share_current_location">Comparteix la ubicació actual</string>
     <string name="tracking">Seguiment d’ubicació</string>
     <string name="clear">Netejar ruta</string>
     <string name="share_link">Enllaç per compartir ruta</string>

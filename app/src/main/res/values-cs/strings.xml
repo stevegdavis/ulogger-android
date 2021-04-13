@@ -137,6 +137,7 @@
     <string name="label_waypoint_description">Popis trasového bodu</string>
     <string name="label_add_photo">Přidat fotku</string>
     <string name="button_save">Uložit</string>
+    <string name="button_share_current_location">Sdílet aktuální polohu</string>
     <string name="tracking">Trasování</string>
     <string name="clear">Vymazat trasu</string>
     <string name="share_link">Sdílet odkaz na stopu</string>

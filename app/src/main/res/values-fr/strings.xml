@@ -133,6 +133,7 @@
     <string name="label_waypoint_description">Description du point d’intérêt</string>
     <string name="label_add_photo">Ajouter une photo</string>
     <string name="button_save">Sauvegarder</string>
+    <string name="button_share_current_location">Partager l\'emplacement actuel</string>
     <string name="tracking">Enregistrement</string>
     <string name="clear">RAZ de la trace</string>
     <string name="share_link">Partager le lien de la trace</string>

@@ -137,6 +137,7 @@
     <string name="label_waypoint_description">Popis cieľového miesta</string>
     <string name="label_add_photo">Pridať fotku</string>
     <string name="button_save">Uložiť</string>
+    <string name="button_share_current_location">Zdieľať aktuálnu polohu</string>
     <string name="tracking">Sledovanie</string>
     <string name="clear">Vymazať cestu</string>
     <string name="share_link">Zdielať odkaz na cestu</string>

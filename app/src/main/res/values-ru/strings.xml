@@ -137,6 +137,7 @@
     <string name="label_waypoint_description">Описание путевой точки</string>
     <string name="label_add_photo">Добавить фото</string>
     <string name="button_save">Сохранить</string>
+    <string name="button_share_current_location">Поделиться текущим местоположением</string>
     <string name="tracking">Запись</string>
     <string name="clear">Удалить трек</string>
     <string name="share_link">Поделиться ссылкой на трек</string>

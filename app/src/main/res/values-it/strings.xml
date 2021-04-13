@@ -133,6 +133,7 @@
     <string name="label_waypoint_description">Descrizione del marcatore</string>
     <string name="label_add_photo">Aggiungi una foto</string>
     <string name="button_save">Salva</string>
+    <string name="button_share_current_location">Condividi posizione corrente</string>
     <string name="tracking">Tracciamento</string>
     <string name="clear">Resetta traccia</string>
     <string name="share_link">Condividi link della traccia</string>

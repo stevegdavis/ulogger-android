@@ -133,6 +133,7 @@
     <string name="label_waypoint_description">Beschreibung des Wegpunktes</string>
     <string name="label_add_photo">Foto hinzufügen</string>
     <string name="button_save">Speichern</string>
+    <string name="button_share_current_location">Aktuellen Standort teilen</string>
     <string name="tracking">Tracking</string>
     <string name="clear">Track leeren</string>
     <string name="share_link">Track Link teilen</string>
