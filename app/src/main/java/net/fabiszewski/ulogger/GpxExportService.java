@@ -46,6 +46,8 @@ public class GpxExportService extends JobIntentService {
 
     private DbAccess db;
 
+    private Context mContext;
+
     static final int JOB_ID = 1000;
 
     /**
@@ -103,7 +105,9 @@ public class GpxExportService extends JobIntentService {
             throw new IOException(getString(R.string.e_open_out_stream));
         }
         try (BufferedOutputStream bufferedStream = new BufferedOutputStream(stream)) {
-            serialize(bufferedStream);
+            //serialize(bufferedStream);
+            CGPSCoordinatesGPXHandler handler = new CGPSCoordinatesGPXHandler();
+            handler.GPSCoordinatesGPXStreamWriter(bufferedStream, db.getPositions(), db.getPositions(), getApplicationContext());
             if (Logger.DEBUG) { Log.d(TAG, "[export gpx file written to " + uri); }
         } catch (IOException|IllegalArgumentException|IllegalStateException e) {
             if (Logger.DEBUG) { Log.d(TAG, "[export gpx write exception: " + e + "]"); }
