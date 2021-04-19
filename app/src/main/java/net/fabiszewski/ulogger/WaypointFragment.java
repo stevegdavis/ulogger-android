@@ -201,7 +201,7 @@ public class WaypointFragment extends Fragment implements LoggerTask.LoggerTaskC
                                 List<ResolveInfo> activityList = pm.queryIntentActivities(shareIntent, 0);
                                 for (final ResolveInfo app : activityList)
                                 {
-                                    if ((app.activityInfo.name).toLowerCase().contains("whatsapp"))
+                                    if ((app.activityInfo.name).toLowerCase().contains("com.whatsapp"))
                                     {
                                         final ActivityInfo activity = app.activityInfo;
                                         final ComponentName name = new ComponentName(activity.applicationInfo.packageName, activity.name);
@@ -262,34 +262,21 @@ public class WaypointFragment extends Fragment implements LoggerTask.LoggerTaskC
                                 Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
                                 shareIntent.setType("text/plain");
                                 shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, message);// "Content to share");
-                                PackageManager pm = context.getPackageManager();
-                                List<ResolveInfo> activityList = pm.queryIntentActivities(shareIntent, 0);
-                                for (final ResolveInfo app : activityList)
-                                {
-                                    if ((app.activityInfo.name).contains("conversations") || (app.activityInfo.name).contains("ComposeMessageActivity") || (app.activityInfo.name).contains("ConversationComposer") || (app.activityInfo.name).contains("ComposeMessageMms"))
-                                    {
-                                        final ActivityInfo activity = app.activityInfo;
-                                        final ComponentName name = new ComponentName(activity.applicationInfo.packageName, activity.name);
-                                        shareIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-                                        shareIntent.setComponent(name);
-                                        startActivity(shareIntent);
-                                        finish();
-                                        break;
-                                    }
+                                Intent intent = new Intent(Intent.ACTION_SEND);
+                                intent.setData(Uri.parse("smsto:"));  // This ensures only SMS apps respond
+                                intent.putExtra("sms_body", message);
+                                if (intent.resolveActivity(context.getPackageManager()) != null) {
+                                    startActivity(intent);
                                 }
                             }
                             catch (android.content.ActivityNotFoundException e)
                             {
                                 if (Logger.DEBUG) { Log.d(TAG, e.getMessage()); }
-                                //CUtils.getLoggerInstance().debug("Exception: " + e.getMessage());
-                                //Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_LONG).show();
 
                             }
                             catch (Exception e)
                             {
                                 if (Logger.DEBUG) { Log.d(TAG, e.getMessage()); }
-                                //CUtils.getLoggerInstance().debug("Exception: " + e.getMessage());
-                                //Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_LONG).show();
                             }
                         }
                     }
