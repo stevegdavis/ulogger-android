@@ -22,8 +22,13 @@ import androidx.annotation.Nullable;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAccessor;
+import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Gateway class for database access
@@ -801,6 +806,33 @@ class DbAccess implements AutoCloseable {
     static String getTimeISO8601(Cursor cursor) {
         long timestamp = cursor.getLong(cursor.getColumnIndex(DbContract.Positions.COLUMN_TIME));
         return getTimeISO8601(timestamp);
+    }
+
+    /**
+     * Return time from positions cursor to long
+     *
+     * @param cursor Cursor
+     * @return Date date
+     */
+    static Date getDate(Cursor cursor) {
+        long val = cursor.getLong(cursor.getColumnIndex(DbContract.Positions.COLUMN_TIME));
+        Date d = new Date(TimeUnit.SECONDS.toMillis(val));
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        String val2 = sdf.format(d);
+        return d;
+    }
+
+    /**
+     * Return date formatted from positions cursor
+     *
+     * @param cursor Cursor
+     * @return String date formatted
+     */
+    static String getDateString(Cursor cursor) {
+        long val = cursor.getLong(cursor.getColumnIndex(DbContract.Positions.COLUMN_TIME));
+        Date d = new Date(TimeUnit.SECONDS.toMillis(val));
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        return sdf.format(d);
     }
 
     /**
