@@ -100,11 +100,13 @@
     <string name="location_permission_denied">Musíte povoliť práva na aktualizáciu polohy</string>
     <string name="using_network">Používa sa poskytovateľ siete</string>
     <string name="using_gps">Používa sa poskytovateľ GPS</string>
-    <string name="export">Exportovať do GPX</string>
+    <string name="export">Exportovať do GPX/KML</string>
     <string name="waypoint">Cieľové miesto</string>
     <string name="nothing_to_export">Nie je čo exportovať</string>
-    <string name="export_done">Cesta sa úspešne zapísala</string>
-    <string name="export_failed">Exportovanie sa nepodarilo</string>
+    <string name="export_gpx_done">Sledujte úspešne uložené GPX</string>
+    <string name="export_gpx_failed">Export zlyhal GPX</string>
+    <string name="export_kml_done">Sledujte úspešne uložené súbory KML</string>
+    <string name="export_kml_failed">Export zlyhal vo formáte KML</string>
     <string name="unknown_track">Neznáma cesta</string>
     <string name="export_started">Exportovanie sa začalo</string>
     <plurals name="label_positions_behind" tools:ignore="UnusedQuantity">

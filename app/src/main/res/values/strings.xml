@@ -63,6 +63,9 @@
     <string name="pref_auto_name_title">Track name template</string>
     <string name="pref_auto_name_summary" formatted="false">Template for new track name. Following patterns will be substituted with current date elements: %y (year), %m (month), %d (day), %H (hour), %M (minute), %S (second). If you need literal percent character use %%.</string>
     <string name="pref_auto_name_default" formatted="false" translatable="false">Auto_%y.%m.%d_%H.%M.%S</string>
+    <string name="pref_export_kml_title">Export to KML</string>
+    <string name="pref_export_kml_summary">Export to KML file as well as default GPX file</string>
+    <string name="pref_export_kml_default">false</string>
     <string name="label_status">Status</string>
     <string name="label_location">Location</string>
     <string name="label_synchronization">Synchronization</string>
@@ -111,11 +114,13 @@
     <string name="location_permission_denied">You must accept permission for location updates</string>
     <string name="using_network">Using network provider</string>
     <string name="using_gps">Using GPS provider</string>
-    <string name="export">Export to GPX</string>
+    <string name="export">Export to GPX/KML</string>
     <string name="waypoint">Waypoint</string>
     <string name="nothing_to_export">Nothing to export</string>
-    <string name="export_done">Track successfully saved</string>
-    <string name="export_failed">Export failed</string>
+    <string name="export_gpx_done">Track successfully saved GPX</string>
+    <string name="export_gpx_failed">Export failed GPX</string>
+    <string name="export_kml_done">Track successfully saved KML</string>
+    <string name="export_kml_failed">Export failed KML</string>
     <string name="unknown_track">Unknown track</string>
     <string name="export_started">Export started</string>
     <plurals name="label_positions_behind">

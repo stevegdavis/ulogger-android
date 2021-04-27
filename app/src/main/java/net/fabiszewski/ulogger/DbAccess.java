@@ -831,7 +831,7 @@ class DbAccess implements AutoCloseable {
     static String getDateString(Cursor cursor) {
         long val = cursor.getLong(cursor.getColumnIndex(DbContract.Positions.COLUMN_TIME));
         Date d = new Date(TimeUnit.SECONDS.toMillis(val));
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         return sdf.format(d);
     }
 

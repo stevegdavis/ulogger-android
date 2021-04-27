@@ -67,8 +67,11 @@ public class CGPSCoordinatesGPXHandler
             outputStream.write(("<trk>\n").getBytes());
             outputStream.write(("<trkseg>\n").getBytes());
             cursor.moveToFirst();
+            String dt = DbAccess.getDateString(cursor);
+            dt = (dt.replace(" ", "T")) + "Z";
+            outputStream.write(("<trkpt lat=" + "\"" + DbAccess.getLatitude(cursor) + "\"" + " lon=" + "\"" + DbAccess.getLongitude(cursor) + "\"" + "><ele>" + DbAccess.getAltitude(startCursor) + "</ele><time>" + dt + "</time><src>gps</src>" + "<extensions>" + "<ulogger:accuracy>" + DbAccess.getAccuracy(startCursor) + "</ulogger:accuracy>" + "<ulogger:speed>" + DbAccess.getSpeed(startCursor) + "</ulogger:speed>" + "<ulogger:bearing>" + DbAccess.getBearing(startCursor) + "</ulogger:bearing>" + "<ulogger:device_name>" + getDeviceName(context) + "</ulogger:device_name>" + "</extensions>" + "</trkpt>\n").getBytes());
             while (cursor.moveToNext()) {
-				String dt = String.format("yyyy-MM-dd HH:mm:ss.SSS", DbAccess.getTime(cursor));
+				dt = DbAccess.getDateString(cursor);
                 dt = (dt.replace(" ", "T")) + "Z";
 				outputStream.write(("<trkpt lat=" + "\"" + DbAccess.getLatitude(cursor) + "\"" + " lon=" + "\"" + DbAccess.getLongitude(cursor) + "\"" + "><ele>" + DbAccess.getAltitude(startCursor) + "</ele><time>" + dt + "</time><src>gps</src>" + "<extensions>" + "<ulogger:accuracy>" + DbAccess.getAccuracy(startCursor) + "</ulogger:accuracy>" + "<ulogger:speed>" + DbAccess.getSpeed(startCursor) + "</ulogger:speed>" + "<ulogger:bearing>" + DbAccess.getBearing(startCursor) + "</ulogger:bearing>" + "<ulogger:device_name>" + getDeviceName(context) + "</ulogger:device_name>" + "</extensions>" + "</trkpt>\n").getBytes());
 			}

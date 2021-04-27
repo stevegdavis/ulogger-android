@@ -100,11 +100,13 @@
     <string name="location_permission_denied">Należy zaakceptować zgodę na dostęp do lokalizacji</string>
     <string name="using_network">Uzyskano dostęp do lokalizacji z sieci</string>
     <string name="using_gps">Uzyskano dostęp do lokalizacji z GPS-a</string>
-    <string name="export">Eksport do GPX</string>
+    <string name="export">Eksport do GPX/KML</string>
     <string name="waypoint">Punkt</string>
     <string name="nothing_to_export">Nie ma nic do wyeksportowania</string>
-    <string name="export_done">Trasa została pomyślnie zapisana</string>
-    <string name="export_failed">Błąd eksportu</string>
+    <string name="export_gpx_done">Śledź pomyślnie zapisany GPX</string>
+    <string name="export_gpx_failed">Eksport nieudany GPX</string>
+    <string name="export_kml_done">Śledź pomyślnie zapisany plik KML</string>
+    <string name="export_kml_failed">Eksportowanie pliku KML nie powiodło się</string>
     <string name="unknown_track">Nieznana trasa</string>
     <string name="export_started">Eksport rozpoczęty</string>
     <plurals name="label_positions_behind">

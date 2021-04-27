@@ -11,49 +11,48 @@ package net.fabiszewski.ulogger;
 
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.net.Uri;
 import android.util.Log;
-import android.util.Xml;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.JobIntentService;
-
-import org.xmlpull.v1.XmlSerializer;
 
 import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
 /**
- * Export track to GPX format
+ * Export track to KML format
  */
-public class GpxExportService extends JobIntentService {
+public class KmlExportService extends JobIntentService {
 
-    private static final String TAG = GpxExportService.class.getSimpleName();
+    private static final String TAG = KmlExportService.class.getSimpleName();
 
-    public static final String GPX_BROADCAST_EXPORT_FAILED = "net.fabiszewski.ulogger.broadcast.gpx_write_failed";
-    public static final String GPX_BROADCAST_EXPORT_DONE = "net.fabiszewski.ulogger.broadcast.gpx_write_ok";
-    public static final String GPX_EXTENSION = ".gpx";
-    public static final String GPX_MIME = "application/gpx+xml";
+    public static final String KML_BROADCAST_EXPORT_FAILED = "net.fabiszewski.ulogger.broadcast.kml_write_failed";
+    public static final String KML_BROADCAST_EXPORT_DONE = "net.fabiszewski.ulogger.broadcast.kml_write_ok";
+    public static final String KML_EXTENSION = ".kml";
+    //public static final String GPX_MIME = "application/gpx+xml";
+
+    private static String mFilename = null;
 
     private DbAccess db;
 
     private Context mContext;
 
-    static final int JOB_ID = 1000;
+    static final int JOB_ID = 1001;
 
     /**
      * Convenience method for enqueuing work in to this service.
      */
-    static void enqueueWork(Context context, Intent work) {
-        enqueueWork(context, GpxExportService.class, JOB_ID, work);
+    static void enqueueWork(Context context, Intent work, String fn) {
+        mFilename = fn;
+        enqueueWork(context, KmlExportService.class, JOB_ID, work);
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
-        if (Logger.DEBUG) { Log.d(TAG, "[gpx export create]"); }
+        if (Logger.DEBUG) { Log.d(TAG, "[kml export create]"); }
 
         db = DbAccess.getOpenInstance(this);
     }
@@ -63,7 +62,7 @@ public class GpxExportService extends JobIntentService {
      */
     @Override
     public void onDestroy() {
-        if (Logger.DEBUG) { Log.d(TAG, "[gpx export stop]"); }
+        if (Logger.DEBUG) { Log.d(TAG, "[kml export stop]"); }
         if (db != null) {
             db.close();
         }
@@ -80,9 +79,10 @@ public class GpxExportService extends JobIntentService {
         if (intent.getData() != null) {
             try {
                 write(intent.getData());
-                sendBroadcast(GPX_BROADCAST_EXPORT_DONE, null);
+                CFormat.removeAmpFromKMLFile(intent.getData(), mFilename, getApplicationContext());
+                sendBroadcast(KML_BROADCAST_EXPORT_DONE, null);
             } catch (IOException e) {
-                sendBroadcast(GPX_BROADCAST_EXPORT_FAILED, e.getMessage());
+                sendBroadcast(KML_BROADCAST_EXPORT_FAILED, e.getMessage());
             }
         }
     }
@@ -98,11 +98,11 @@ public class GpxExportService extends JobIntentService {
             throw new IOException(getString(R.string.e_open_out_stream));
         }
         try (BufferedOutputStream bufferedStream = new BufferedOutputStream(stream)) {
-            CGPSCoordinatesGPXHandler handler = new CGPSCoordinatesGPXHandler();
-            handler.GPSCoordinatesGPXStreamWriter(bufferedStream, db.getPositions(), db.getPositions(), getApplicationContext());
-            if (Logger.DEBUG) { Log.d(TAG, "[export gpx file written to " + uri); }
+            CGPSCoordinatesKMLHandler handler = new CGPSCoordinatesKMLHandler();
+            handler.GPSCoordinatesKMLStreamWriter(bufferedStream, db.getPositions(), db.getPositions(), getApplicationContext());
+            if (Logger.DEBUG) { Log.d(TAG, "[export kml file written to " + uri); }
         } catch (IOException|IllegalArgumentException|IllegalStateException e) {
-            if (Logger.DEBUG) { Log.d(TAG, "[export gpx write exception: " + e + "]"); }
+            if (Logger.DEBUG) { Log.d(TAG, "[export kml write exception: " + e + "]"); }
             throw new IOException(e.getMessage());
         }
     }

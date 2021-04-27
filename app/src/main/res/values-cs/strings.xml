@@ -100,11 +100,13 @@
     <string name="location_permission_denied">Musíte souhlasit s aktualizací umístění</string>
     <string name="using_network">Použití poskytovatele sítě</string>
     <string name="using_gps">Použití poskytovatele gps</string>
-    <string name="export">Export do GPX</string>
+    <string name="export">Export do GPX/KML</string>
     <string name="waypoint">Trasový bod</string>
     <string name="nothing_to_export">Nic k exportu</string>
-    <string name="export_done">Trasa úspěšně uložena</string>
-    <string name="export_failed">Export se nezdařil</string>
+    <string name="export_gpx_done">Sledujte úspěšně uložené GPX</string>
+    <string name="export_gpx_failed">Export se nezdařil GPX</string>
+    <string name="export_kml_done">Sledujte úspěšně uložený soubor KML</string>
+    <string name="export_kml_failed">Export selhal KML</string>
     <string name="unknown_track">Neznámá trasa</string>
     <string name="export_started">Export začal</string>
     <plurals name="label_positions_behind" tools:ignore="UnusedQuantity">

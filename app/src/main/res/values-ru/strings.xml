@@ -100,11 +100,13 @@
     <string name="location_permission_denied">Вы должны дать разрешение на доступ к геоданным</string>
     <string name="using_network">Использование сети</string>
     <string name="using_gps">Использование спутников gps</string>
-    <string name="export">Экспортировать в GPX файл</string>
+    <string name="export">Экспорт в GPX/KML</string>
     <string name="waypoint">Точка</string>
     <string name="nothing_to_export">Нечего экспортировать</string>
-    <string name="export_done">Трек успешно сохранён</string>
-    <string name="export_failed">Ошибка экспортирования</string>
+    <string name="export_gpx_done">Трек успешно сохранен GPX</string>
+    <string name="export_gpx_failed">Ошибка экспорта GPX</string>
+    <string name="export_kml_done">Отслеживание успешно сохраненного KML</string>
+    <string name="export_kml_failed">Ошибка экспорта KML</string>
     <string name="unknown_track">Неизвестный трек</string>
     <string name="export_started">Экспортирование начато</string>
     <plurals name="label_positions_behind">

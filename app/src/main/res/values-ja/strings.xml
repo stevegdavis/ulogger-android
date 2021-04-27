@@ -88,10 +88,12 @@
     <string name="location_permission_denied">位置の更新のため、アクセス許可が必要です</string>
     <string name="using_network">ネットワークプロバイダーの使用</string>
     <string name="using_gps">GPS プロバイダーの使用</string>
-    <string name="export">GPX にエクスポート</string>
+    <string name="export">GPX / KMLにエクスポート</string>
     <string name="nothing_to_export">エクスポートするものはありません</string>
-    <string name="export_done">トラックを保存しました</string>
-    <string name="export_failed">エクスポートに失敗しました</string>
+    <string name="export_gpx_done">正常に保存されたGPXを追跡する</string>
+    <string name="export_gpx_failed">エクスポートに失敗したGPX</string>
+    <string name="export_kml_done">保存に成功したKMLを追跡する</string>
+    <string name="export_kml_failed">エクスポートに失敗したKML</string>
     <string name="unknown_track">不明なトラック</string>
     <string name="export_started">エクスポートが開始しました</string>
     <plurals name="label_positions_behind">

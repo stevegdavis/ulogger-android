@@ -98,11 +98,13 @@
     <string name="location_permission_denied">Debes aceptar la solicitud de permisos de ubicación</string>
     <string name="using_network">Utilizando proveedor de red</string>
     <string name="using_gps">Utilizando proveedor GPS</string>
-    <string name="export">Exportar a GPX</string>
+    <string name="export">Exportar a GPX/KML</string>
     <string name="waypoint">Punto de paso</string>
     <string name="nothing_to_export">No hay nada que exportar</string>
-    <string name="export_done">La ruta se ha guardado correctamente</string>
-    <string name="export_failed">Ha fallado la exportación</string>
+    <string name="export_gpx_done">Seguimiento de GPX guardado con éxito</string>
+    <string name="export_gpx_failed">Exportación de GPX fallida</string>
+    <string name="export_kml_done">Seguimiento de KML guardado correctamente</string>
+    <string name="export_kml_failed">Exportación de KML fallida</string>
     <string name="unknown_track">Ruta desconocida</string>
     <string name="export_started">Exportación iniciada</string>
     <plurals name="label_positions_behind">

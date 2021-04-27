@@ -98,11 +98,13 @@
     <string name="location_permission_denied">Kokapen baimena eman behar duzu</string>
     <string name="using_network">Datu-konexioa erabiltzen</string>
     <string name="using_gps">GPSa erabiltzen</string>
-    <string name="export">GPXera esportatu</string>
+    <string name="export">Esportatu GPX/KMLra</string>
     <string name="waypoint">Bide-puntua</string>
     <string name="nothing_to_export">Exportatzeko daturik ez</string>
-    <string name="export_done">Ibilbidea zuzen gordeta</string>
-    <string name="export_failed">Akatsa esportatzean</string>
+    <string name="export_gpx_done">Jarraitu ondo gordetako GPXa</string>
+    <string name="export_gpx_failed">Esportatzeak huts egin du GPX</string>
+    <string name="export_kml_done">Jarraipena ongi gorde den KML</string>
+    <string name="export_kml_failed">Ezin izan da esportatu KML</string>
     <string name="unknown_track">Ibilbide ezezaguna</string>
     <string name="export_started">Esportazioa hasita</string>
     <plurals name="label_positions_behind">

@@ -37,6 +37,8 @@ import static net.fabiszewski.ulogger.Alert.showConfirm;
 import static net.fabiszewski.ulogger.GpxExportService.GPX_EXTENSION;
 import static net.fabiszewski.ulogger.GpxExportService.GPX_MIME;
 
+import static net.fabiszewski.ulogger.KmlExportService.KML_EXTENSION;
+
 /**
  * Main activity of ulogger
  *
@@ -50,12 +52,15 @@ public class MainActivity extends AppCompatActivity
 
     private final static int RESULT_PREFS_UPDATED = 1;
     private final static int RESULT_GPX_EXPORT = 2;
+    private final static int RESULT_KML_EXPORT = 3;
     public final static String UPDATED_PREFS = "extra_updated_prefs";
 
     public String preferenceHost;
     public String preferenceUnits;
     public long preferenceMinTimeMillis;
     public boolean preferenceLiveSync;
+
+    private static String filename = null;
 
     private DbAccess db;
 
@@ -197,6 +202,13 @@ public class MainActivity extends AppCompatActivity
                 GpxExportService.enqueueWork(MainActivity.this, intent);
                 showToast(getString(R.string.export_started));
             }
+        } else if (requestCode == RESULT_KML_EXPORT && resultCode == Activity.RESULT_OK) {
+            if (data != null) {
+                Intent intent = new Intent(MainActivity.this, KmlExportService.class);
+                intent.setData(data.getData());
+                KmlExportService.enqueueWork(MainActivity.this, intent, filename);
+                showToast(getString(R.string.export_started));
+            }
         }
     }
 
@@ -211,8 +223,24 @@ public class MainActivity extends AppCompatActivity
             intent.putExtra(Intent.EXTRA_TITLE, DbAccess.getTrackName(this) + GPX_EXTENSION);
             try {
                 startActivityForResult(intent, RESULT_GPX_EXPORT);
-            } catch (ActivityNotFoundException e) {
+            }
+            catch (ActivityNotFoundException e) {
                 showToast(getString(R.string.cannot_open_picker), Toast.LENGTH_LONG);
+            }
+            //KML check prefs
+            if(PreferenceManager.getDefaultSharedPreferences(this).getBoolean(SettingsActivity.KEY_EXPORT_KML, false))
+            {
+                Intent kmlIntent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
+                kmlIntent.addCategory(Intent.CATEGORY_OPENABLE);
+                kmlIntent.setType("application/vnd.google-earth.kml+xml");
+                filename = DbAccess.getTrackName(this);
+                kmlIntent.putExtra(Intent.EXTRA_TITLE, DbAccess.getTrackName(this) + KML_EXTENSION);
+                try {
+                    startActivityForResult(kmlIntent, RESULT_KML_EXPORT);
+                }
+                catch (ActivityNotFoundException e) {
+                    showToast(getString(R.string.cannot_open_picker), Toast.LENGTH_LONG);
+                }
             }
         } else {
             showToast(getString(R.string.nothing_to_export));

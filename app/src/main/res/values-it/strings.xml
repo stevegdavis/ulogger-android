@@ -98,11 +98,13 @@
     <string name="location_permission_denied">Per aggiornare la posizione devi accettare i permessi di localizzazione</string>
     <string name="using_network">Connessione dati in utilizzo</string>
     <string name="using_gps">GPS in utilizzo</string>
-    <string name="export">Esporta in GPX</string>
+    <string name="export">Esporta in GPX/KML</string>
     <string name="waypoint">Marcatore</string>
     <string name="nothing_to_export">Niente da esportare</string>
-    <string name="export_done">Traccia salvata con successo</string>
-    <string name="export_failed">Esportazione fallita</string>
+    <string name="export_gpx_done">Traccia GPX salvato con successo</string>
+    <string name="export_gpx_failed">Esporta GPX non riuscita</string>
+    <string name="export_kml_done">Tieni traccia del KML salvato con successo</string>
+    <string name="export_kml_failed">Esportazione KML non riuscita</string>
     <string name="unknown_track">Traccia sconosciuta</string>
     <string name="export_started">Esportazione iniziata</string>
     <plurals name="label_positions_behind">

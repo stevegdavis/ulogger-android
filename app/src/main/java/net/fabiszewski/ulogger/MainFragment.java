@@ -629,8 +629,10 @@ public class MainFragment extends Fragment {
             filter.addAction(LoggerService.BROADCAST_LOCATION_GPS_ENABLED);
             filter.addAction(LoggerService.BROADCAST_LOCATION_NETWORK_ENABLED);
             filter.addAction(LoggerService.BROADCAST_LOCATION_PERMISSION_DENIED);
-            filter.addAction(GpxExportService.BROADCAST_EXPORT_FAILED);
-            filter.addAction(GpxExportService.BROADCAST_EXPORT_DONE);
+            filter.addAction(GpxExportService.GPX_BROADCAST_EXPORT_FAILED);
+            filter.addAction(GpxExportService.GPX_BROADCAST_EXPORT_DONE);
+            filter.addAction(KmlExportService.KML_BROADCAST_EXPORT_FAILED);
+            filter.addAction(KmlExportService.KML_BROADCAST_EXPORT_DONE);
             filter.addAction(WebSyncService.BROADCAST_SYNC_DONE);
             filter.addAction(WebSyncService.BROADCAST_SYNC_FAILED);
             context.registerReceiver(broadcastReceiver, filter);
@@ -710,11 +712,22 @@ public class MainFragment extends Fragment {
                 case LoggerService.BROADCAST_LOCATION_GPS_ENABLED:
                     showToast(getString(R.string.using_gps));
                     break;
-                case GpxExportService.BROADCAST_EXPORT_DONE:
-                    showToast(getString(R.string.export_done));
+                case GpxExportService.GPX_BROADCAST_EXPORT_DONE:
+                    showToast(getString(R.string.export_gpx_done));
                     break;
-                case GpxExportService.BROADCAST_EXPORT_FAILED: {
-                    String message = getString(R.string.export_failed);
+                case GpxExportService.GPX_BROADCAST_EXPORT_FAILED: {
+                    String message = getString(R.string.export_gpx_failed);
+                    if (intent.hasExtra("message")) {
+                        message += "\n" + intent.getStringExtra("message");
+                    }
+                    showToast(message);
+                    break;
+                }
+                case KmlExportService.KML_BROADCAST_EXPORT_DONE:
+                    showToast(getString(R.string.export_kml_done));
+                    break;
+                case KmlExportService.KML_BROADCAST_EXPORT_FAILED: {
+                    String message = getString(R.string.export_kml_failed);
                     if (intent.hasExtra("message")) {
                         message += "\n" + intent.getStringExtra("message");
                     }
