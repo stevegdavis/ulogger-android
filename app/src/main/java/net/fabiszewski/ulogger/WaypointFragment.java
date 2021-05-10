@@ -43,10 +43,21 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.what3words.androidwrapper.What3WordsV3;
+import com.what3words.javawrapper.request.Coordinates;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
+
+//import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+//import io.reactivex.rxjava3.core.Observable;
+//import io.reactivex.rxjava3.schedulers.Schedulers;
+
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 import static android.app.Activity.RESULT_OK;
 import static android.content.Intent.EXTRA_LOCAL_ONLY;
@@ -133,266 +144,29 @@ public class WaypointFragment extends Fragment implements LoggerTask.LoggerTaskC
         try
         {
             final Context context = getActivity().getBaseContext();
-            final String latitudeStr = String.valueOf(location.getLatitude());
-            final String longitudeStr = String.valueOf(location.getLongitude());
-            // Create a choice intent
-            // "WhatsApp", "SMS", "Email"
-            final CharSequence choiceListAll[] = {getString(R.string.choiceListOnSendCurrentLocationWhatsAppText), getString(R.string.choiceListOnSendCurrentLocationEmailText), getString(R.string.choiceListOnSendCurrentLocationSMSText)};
-            final CharSequence choiceList[] = {getString(R.string.choiceListOnSendCurrentLocationEmailText), getString(R.string.choiceListOnSendCurrentLocationSMSText)};
-            final boolean bl[] = new boolean[choiceListAll.length];
-            bl[0] = true; // Default setting
-            boolean isWhatsAppInstalled = false;
-            PackageManager pm = context.getPackageManager();
+            What3WordsV3 wrapper = new What3WordsV3("U75NR3E0", context);
+
+//            final String latitudeStr = String.valueOf(location.getLatitude());
+//            final String longitudeStr = String.valueOf(location.getLongitude());
             Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
-            List<ResolveInfo> activityList = pm.queryIntentActivities(shareIntent, 0);
-            for (final ResolveInfo app : activityList)
-            {
-                if ((app.activityInfo.name).toLowerCase().contains("whatsapp"))
-                    isWhatsAppInstalled = true;
-            }
-            final android.app.AlertDialog.Builder ad = new android.app.AlertDialog.Builder(getActivity());//MainActivity.this);
-            ad.setTitle(getString(R.string.dialogBoxActionTitle));
-            if (isWhatsAppInstalled)
-            {
-                ad.setSingleChoiceItems(choiceListAll, 0, new DialogInterface.OnClickListener()
-                {
-                    @Override
-                    public void onClick(DialogInterface arg0, int arg1)
-                    {
-                        bl[arg1] = true;
-                        if (arg1 == 0)
-                        {
-                            bl[1] = false;
-                            bl[2] = false;
+//            Date date = new Date(System.currentTimeMillis());
+//            final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            //String message = getString(R.string.share_current_location_link_msg) + " " + GoogleMapsLinkStr + latitudeStr + "," + longitudeStr + getString(R.string.share_current_location_accuracy) + " " + String.valueOf(location.getAccuracy()) + " metres.)";
+            Observable.fromCallable(() -> wrapper.convertTo3wa(new Coordinates(location.getLatitude(), location.getLongitude())).execute())
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(result -> {
+                        if (result.isSuccessful()) {
+                            //Log.i("MainActivity", String.format("3 word address: %s", result.getWords()));
+                            String message = getString(R.string.share_current_location_link_w3w_msg) + " https://w3w.co/" + result.getWords() + " " + getString(R.string.share_current_location_accuracy) + " " + String.valueOf(location.getAccuracy()) + " metres).";
+                            shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.button_share_current_location));
+                            shareIntent.putExtra(Intent.EXTRA_TEXT, message);
+                            startActivity(Intent.createChooser(shareIntent, getString(R.string.button_share_current_location)));
+                        } else {
+                            if (Logger.DEBUG) { Log.d(TAG, result.getError().getMessage()); }
                         }
-                        else if (arg1 == 1)
-                        {
-                            bl[0] = false;
-                            bl[2] = false;
-                        }
-                        else if (arg1 == 2)
-                        {
-                            bl[0] = false;
-                            bl[1] = false;
-                        }
-                    }
-                });
-                ad.setPositiveButton(getString(R.string.dialogBoxOK), new DialogInterface.OnClickListener()
-                {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which)
-                    {
-                        TextView tv = null;
-                        int Idx = -1;
-                        Date date = new Date(System.currentTimeMillis());
-                        final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-                        //String message = hiMessage1 + sdf.format(date) + ")" + hiMessage2 + googleMapsLinkStr + latitudeStr + "," + longitudeStr + ". Accurate within " + String.valueOf(location.getAccuracy()) + " metres.";
-                        String message = hiMessage1 + GoogleMapsLinkStr + latitudeStr + "," + longitudeStr + ". Accurate within " + String.valueOf(location.getAccuracy()) + " metres.";
-                        if (bl[0])
-                        {
-                            // WhatsApp
-                            try
-                            {
-                                Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
-                                shareIntent.setType("text/plain");
-                                shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, message);// "Content to share");
-                                PackageManager pm = context.getPackageManager();
-                                List<ResolveInfo> activityList = pm.queryIntentActivities(shareIntent, 0);
-                                for (final ResolveInfo app : activityList)
-                                {
-                                    if ((app.activityInfo.name).toLowerCase().contains("com.whatsapp"))
-                                    {
-                                        final ActivityInfo activity = app.activityInfo;
-                                        final ComponentName name = new ComponentName(activity.applicationInfo.packageName, activity.name);
-                                        shareIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-                                        shareIntent.setComponent(name);
-                                        startActivity(shareIntent);
-                                        finish();
-                                        break;
-                                    }
-                                }
-                            }
-                            catch (android.content.ActivityNotFoundException e)
-                            {
-                                if (Logger.DEBUG) { Log.d(TAG, e.getMessage()); }
-                                //CUtils.getLoggerInstance().debug("Exception: " + e.getMessage());
-                                //Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-
-                            }
-                            catch (Exception e)
-                            {
-                                if (Logger.DEBUG) { Log.d(TAG, e.getMessage()); }
-                                //CUtils.getLoggerInstance().debug("Exception: " + e.getMessage());
-                                //Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-                            }
-                        }
-                        else if (bl[1])
-                        {
-                            // Send Email
-                            try
-                            {
-                                Intent intent = new Intent(Intent.ACTION_SEND);
-                                intent.setType("text/html");
-                                intent.putExtra(Intent.EXTRA_EMAIL, "emailaddress@emailaddress.com");
-                                intent.putExtra(Intent.EXTRA_SUBJECT, "My GPS Coordinates");
-                                intent.putExtra(Intent.EXTRA_TEXT, message);
-                                startActivity(Intent.createChooser(intent, "Send Email"));
-                                finish();
-                            }
-                            catch (android.content.ActivityNotFoundException e)
-                            {
-                                if (Logger.DEBUG) { Log.d(TAG, e.getMessage()); }
-                                //CUtils.getLoggerInstance().debug("Exception: " + e.getMessage());
-                                //Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-
-                            }
-                            catch (Exception e)
-                            {
-                                if (Logger.DEBUG) { Log.d(TAG, e.getMessage()); }
-                                //CUtils.getLoggerInstance().debug("Exception: " + e.getMessage());
-                                //Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-                            }
-                        }
-                        else if (bl[2])
-                        {
-                            // Send SMS
-                            try
-                            {
-                                Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
-                                shareIntent.setType("text/plain");
-                                shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, message);// "Content to share");
-                                Intent intent = new Intent(Intent.ACTION_SEND);
-                                intent.setData(Uri.parse("smsto:"));  // This ensures only SMS apps respond
-                                intent.putExtra("sms_body", message);
-                                if (intent.resolveActivity(context.getPackageManager()) != null) {
-                                    startActivity(intent);
-                                }
-                            }
-                            catch (android.content.ActivityNotFoundException e)
-                            {
-                                if (Logger.DEBUG) { Log.d(TAG, e.getMessage()); }
-
-                            }
-                            catch (Exception e)
-                            {
-                                if (Logger.DEBUG) { Log.d(TAG, e.getMessage()); }
-                            }
-                        }
-                    }
-                });
-                ad.setNegativeButton(getString(R.string.dialogBoxCancel), new DialogInterface.OnClickListener()
-                {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which)
-                    {
-                    }
-                });
-                ad.show();
-            }
-            else
-            {
-                ad.setSingleChoiceItems(choiceList, 0, new DialogInterface.OnClickListener()
-                {
-                    @Override
-                    public void onClick(DialogInterface arg0, int arg1)
-                    {
-                        bl[arg1] = true;
-                        if (arg1 == 0)
-                        {
-                            bl[1] = false;
-                        }
-                        else if (arg1 == 1)
-                        {
-                            bl[0] = false;
-                        }
-                    }
-                });
-                ad.setPositiveButton(getString(R.string.dialogBoxOK), new DialogInterface.OnClickListener()
-                {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which)
-                    {
-                        TextView tv = null;
-                        int Idx = -1;
-                        Date date = new Date(System.currentTimeMillis());
-                        final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-                        String message = hiMessage1 + GoogleMapsLinkStr + latitudeStr + "," + longitudeStr;
-                        if (bl[0])
-                        {
-                            // Send Email
-                            try
-                            {
-                                Intent intent = new Intent(Intent.ACTION_SEND);
-                                intent.setType("text/html");
-                                intent.putExtra(Intent.EXTRA_EMAIL, "emailaddress@emailaddress.com");
-                                intent.putExtra(Intent.EXTRA_SUBJECT, "My GPS Coordinates");
-                                intent.putExtra(Intent.EXTRA_TEXT, message);
-                                startActivity(Intent.createChooser(intent, "Send Email"));
-                                finish();
-                            }
-                            catch (android.content.ActivityNotFoundException e)
-                            {
-                                if (Logger.DEBUG) { Log.d(TAG, e.getMessage()); }
-                                //CUtils.getLoggerInstance().debug("Exception: " + e.getMessage());
-                                //Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-
-                            }
-                            catch (Exception e)
-                            {
-                                if (Logger.DEBUG) { Log.d(TAG, e.getMessage()); }
-                                //CUtils.getLoggerInstance().debug("Exception: " + e.getMessage());
-                                //Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-                            }
-                        }
-                        else if (bl[1])
-                        {
-                            // Send SMS
-                            try
-                            {
-                                Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
-                                shareIntent.setType("text/plain");
-                                shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, message);// "Content to share");
-                                PackageManager pm = context.getPackageManager();
-                                List<ResolveInfo> activityList = pm.queryIntentActivities(shareIntent, 0);
-                                for (final ResolveInfo app : activityList)
-                                {
-                                    if ((app.activityInfo.name).contains("conversations") || (app.activityInfo.name).contains("ComposeMessageActivity") || (app.activityInfo.name).contains("ConversationComposer") || (app.activityInfo.name).contains("ComposeMessageMms"))
-                                    {
-                                        final ActivityInfo activity = app.activityInfo;
-                                        final ComponentName name = new ComponentName(activity.applicationInfo.packageName, activity.name);
-                                        shareIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-                                        shareIntent.setComponent(name);
-                                        startActivity(shareIntent);
-                                        break;
-                                    }
-                                }
-                            }
-                            catch (android.content.ActivityNotFoundException e)
-                            {
-                                if (Logger.DEBUG) { Log.d(TAG, e.getMessage()); }
-                                //CUtils.getLoggerInstance().debug("Exception: " + e.getMessage());
-                                //Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-
-                            }
-                            catch (Exception e)
-                            {
-                                if (Logger.DEBUG) { Log.d(TAG, e.getMessage()); }
-                                //CUtils.getLoggerInstance().debug("Exception: " + e.getMessage());
-                                //Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-                            }
-                        }
-                    }
-                });
-                ad.setNegativeButton(getString(R.string.dialogBoxCancel), new DialogInterface.OnClickListener()
-                {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which)
-                    {
-                    }
-                });
-                ad.show();
-            }
+                    });
         }
         catch (Exception e)
         {

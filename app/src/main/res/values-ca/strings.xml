@@ -139,4 +139,9 @@
     <string name="tracking">Seguiment d’ubicació</string>
     <string name="clear">Netejar ruta</string>
     <string name="share_link">Enllaç per compartir ruta</string>
+
+    <!--Share Current Location-->
+    <string name="share_current_location_link_google_msg">Hola, feu clic en aquest enllaç per veure la meva ubicació:</string>
+    <string name="share_current_location_link_w3w_msg">La meva ubicació actual a what3words:</string>
+    <string name="share_current_location_accuracy">(Precís dins</string>
 </resources>

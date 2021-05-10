@@ -143,4 +143,9 @@
     <string name="tracking">Sledovanie</string>
     <string name="clear">Vymazať cestu</string>
     <string name="share_link">Zdielať odkaz na cestu</string>
+
+    <!--Share Current Location-->
+    <string name="share_current_location_link_google_msg">Ahoj, kliknutím na tento odkaz zobrazíte moju polohu:</string>
+    <string name="share_current_location_link_w3w_msg">Moja aktuálna poloha na what3words:</string>
+    <string name="share_current_location_accuracy">(Presné v rámci</string>
 </resources>

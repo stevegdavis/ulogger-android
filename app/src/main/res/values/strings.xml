@@ -159,13 +159,8 @@
     <string name="background_location_rationale">Background location permission is only needed when tracking is started without user interaction: through external command or when application is automatically started on system boot.\nFor this functionality to work you must select \"%s\" option in the location permission dialog.\nProceed to application permissions?</string>
     <string name="background_location_required">Background location permission required</string>
 
-    <!--Various Choice Lists-->
-    <string name="choiceListOnSendCurrentLocationSMSText">SMS</string>
-    <string name="choiceListOnSendCurrentLocationEmailText">Email</string>
-    <string name="choiceListOnSendCurrentLocationWhatsAppText">WhatsApp</string>
-
-    <!--General-->
-    <string name="dialogBoxOK">"OK"</string>
-    <string name="dialogBoxActionTitle">"Action"</string>
-    <string name="dialogBoxCancel">"Cancel"</string>
+    <!--Share Current Location-->
+    <string name="share_current_location_link_google_msg">Hi, click on this link to see my location:</string>
+    <string name="share_current_location_link_w3w_msg">My current location on what3words:</string>
+    <string name="share_current_location_accuracy">(Accurate within</string>
 </resources>

@@ -139,4 +139,9 @@
     <string name="tracking">Tracciamento</string>
     <string name="clear">Resetta traccia</string>
     <string name="share_link">Condividi link della traccia</string>
+
+    <!--Share Current Location-->
+    <string name="share_current_location_link_google_msg">Kaixo, egin klik esteka honetan nire kokapena ikusteko:</string>
+    <string name="share_current_location_link_w3w_msg">Nire uneko kokapena what3words-en:</string>
+    <string name="share_current_location_accuracy">(Zehatzak barruan</string>
 </resources>
