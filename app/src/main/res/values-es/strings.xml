@@ -52,6 +52,8 @@
     <string name="pref_units_nautical">Náuticas</string>
     <string name="pref_auto_name_title">Plantilla del nombre de ruta</string>
     <string name="pref_auto_name_summary" formatted="false">Plantilla del nombre de la nueva ruta. Los siguientes patrones serán sustituidos con elementos de fecha actuales: %y (año), %m (mes), %d (día), %H (hora), %M (minuto), %S (segundo). Si necesita un carácter de porcentaje literal, use %%.</string>
+    <string name="pref_export_kml_title">Exportar a KML</string>
+    <string name="pref_export_kml_summary">Exportar a un archivo KML, así como a un archivo GPX predeterminado</string>
     <string name="label_status">Estado</string>
     <string name="label_location">Ubicación</string>
     <string name="label_synchronization">Sincronización</string>

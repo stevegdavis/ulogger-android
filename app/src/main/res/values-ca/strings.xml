@@ -52,6 +52,8 @@
     <string name="pref_units_nautical">Nàutiques</string>
     <string name="pref_auto_name_title">Plantilla del nom de ruta</string>
     <string name="pref_auto_name_summary" formatted="false">Plantilla del nom de la nova ruta. Els següents patrons seran substituits amb elements de data actual: %y (any), %m (mes), %d (dia), %H (hora), %M (minut), %S (segon). Si necessita un caràcter de percentatge literal, utilitzi %%.</string>
+    <string name="pref_export_kml_title">Exporta a KML</string>
+    <string name="pref_export_kml_summary">Exporteu al fitxer KML, així com al fitxer GPX per defecte</string>
     <string name="label_status">Estat</string>
     <string name="label_location">Ubicació</string>
     <string name="label_synchronization">Sincronització</string>

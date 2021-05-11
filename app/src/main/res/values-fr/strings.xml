@@ -52,6 +52,9 @@
     <string name="pref_units_nautical">Système nautique</string>
     <string name="pref_auto_name_title">Nom par défaut de la trace</string>
     <string name="pref_auto_name_summary" formatted="false">Modèle pour le nouveau nom d’une trace. Les modèles suivants seront remplacés par les éléments de la date actuelle : %y (année), %m (mois), %d (jour), %H (heure), %M (minute), %S (seconde). Si vous avez besoin d’utiliser le caractère de pourcentage littéral, utilisez %%.</string>
+    <string name="pref_export_kml_title">Exporter vers KML</string>
+    <string name="pref_export_kml_summary">Exporter vers un fichier KML ainsi que vers un fichier GPX par défaut</string>
+    <string name="pref_export_kml_default">false</string>
     <string name="label_status">Statut</string>
     <string name="label_location">Position</string>
     <string name="label_synchronization">Synchronisation</string>
