@@ -52,6 +52,8 @@
     <string name="pref_units_nautical">Естественные системы единиц</string>
     <string name="pref_auto_name_title">Шаблон названия трэка</string>
     <string name="pref_auto_name_summary" formatted="false">Шаблон названия нового трека. Следующие элементы будут замещены текущей датой: %y (год), %m (месяц), %d (день), %H (часы), %M (минуты), %S (секунды). Для использования знака процента введите %%.</string>
+    <string name="pref_export_kml_title">Экспорт в KML</string>
+    <string name="pref_export_kml_summary">Экспорт в файл KML, а также в файл GPX по умолчанию</string>
     <string name="label_status">Статус</string>
     <string name="label_location">Позиционирование </string>
     <string name="label_synchronization">Синхронизация</string>

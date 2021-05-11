@@ -52,6 +52,8 @@
     <string name="pref_units_nautical">Itsasokoa</string>
     <string name="pref_auto_name_title">Bide izenen txantiloia</string>
     <string name="pref_auto_name_summary" formatted="false">Bide berrientzako txantiloia. Ondorengo patroiak erabil ditzakezu: %y (urtea), %m (hilabetea), %d (eguna), %H (ordua), %M (minutua), %S (segundoa). Ehuneko zeinua sartu nahi baduzu erabili %%</string>
+    <string name="pref_export_kml_title">Esportatu KMLra</string>
+    <string name="pref_export_kml_summary">Esportatu KML fitxategira eta baita GPX fitxategi lehenetsira ere</string>
     <string name="label_status">Egoera</string>
     <string name="label_location">Kokapena</string>
     <string name="label_synchronization">Sinkronizazioa</string>

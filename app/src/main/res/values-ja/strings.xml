@@ -41,6 +41,8 @@
     <string name="pref_autostart_summary">システム起動時にアプリケーションが開始します</string>
     <string name="pref_provider_title">位置プロバイダー</string>
     <string name="pref_provider_summary">GPS プロバイダー、ネットワーク、または両方で位置が提供されます。 両方のプロバイダーを使用すると最良の結果を得られますが、バッテリーを多く使用します。</string>
+    <string name="pref_export_kml_title">KMLにエクスポート</string>
+    <string name="pref_export_kml_summary">KMLファイルとデフォルトのGPXファイルにエクスポートする</string>
     <string name="pref_units_title">単位</string>
     <string name="pref_units_summary">トラックサマリーを表示するために優先する単位</string>
     <string name="pref_units_metric">メートル</string>

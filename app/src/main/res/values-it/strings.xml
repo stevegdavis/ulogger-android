@@ -52,6 +52,8 @@
     <string name="pref_units_nautical">Nautico</string>
     <string name="pref_auto_name_title">Modello nome della traccia</string>
     <string name="pref_auto_name_summary" formatted="false">Modello per il nome della traccia. Il seguente modello verrà utilizzato per i nomi: %y (anno), %m (mese), %d (giorno), %H (ore), %M (minuti), %S (secondi). Se hai bisogno del simbolo della percentuale, utilizza %%.</string>
+    <string name="pref_export_kml_title">Esporta in KML</string>
+    <string name="pref_export_kml_summary">Esporta in file KML e file GPX predefinito</string>
     <string name="label_status">Stato</string>
     <string name="label_location">Posizione</string>
     <string name="label_synchronization">Sincronizzazione</string>

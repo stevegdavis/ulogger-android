@@ -52,6 +52,8 @@
     <string name="pref_units_nautical">Nawigacyjne</string>
     <string name="pref_auto_name_title">Szablon nazwy trasy</string>
     <string name="pref_auto_name_summary" formatted="false">Szablon nazwy nowej trasy. Następujące wzorce zostaną zastąpione odpowiednimi elementami bieżącej daty: %y (rok), %m (miesiąc), %d (dzień), %H (godzina), %M (minuta), %S (sekunda). Aby uzyskać znak procenta użyj %%.</string>
+    <string name="pref_export_kml_title">Eksportuj do KML</string>
+    <string name="pref_export_kml_summary">Eksportuj do pliku KML, a także domyślnego pliku GPX</string>
     <string name="label_status">Status</string>
     <string name="label_location">Lokalizacja</string>
     <string name="label_synchronization">Synchronizacja</string>

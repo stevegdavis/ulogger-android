@@ -52,6 +52,8 @@
     <string name="pref_units_nautical">Námornícke</string>
     <string name="pref_auto_name_title">Šablóna názvu cesty</string>
     <string name="pref_auto_name_summary" formatted="false">Šablóna pre názov novej cesty. Tento vzorec bude nahradený aktuálnym dátumom takto: %y (rok), %m (mesiac), %d (deň), %H (hodina), %M (minúta), %S (sekunda). Ak potrebujete znak percenta, použite %%.</string>
+    <string name="pref_export_kml_title">Exportovať do KML</string>
+    <string name="pref_export_kml_summary">Exportujte do súboru KML aj do predvoleného súboru GPX</string>
     <string name="label_status">Stav</string>
     <string name="label_location">Poloha</string>
     <string name="label_synchronization">Synchronizácia</string>
