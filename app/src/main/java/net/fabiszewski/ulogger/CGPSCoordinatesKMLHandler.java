@@ -196,7 +196,7 @@ public class CGPSCoordinatesKMLHandler
 
                 String latLonS = DbAccess.getLatitude(cursor) + "," + DbAccess.getLongitude(cursor);
                 //target="_blank | sametab"
-                String hyperLink = "&lt;a href=\"https://www.google.com/maps?q=" + latLonS + "&amp;layer=c&amp;cbll=" + latLonS + "&amp;cbp=11\" target=\"_blank | sametab\"&gt;&lt;p&gt;&lt;font color=\"red\"&gt;Street View&lt;/font&gt;&lt;/p&gt;";
+                String hyperLink = "&lt;a href=\"https://www.google.com/maps?q=" + latLonS + "&amp;layer=c&amp;cbll=" + latLonS + "&amp;cbp=11\" target=\"_blank | sametab\"&gt;&lt;font color=\"red\"&gt;Street View&lt;/font&gt;";
                 xmlSerializer.text("Device: " + getDeviceName(context) + "<br/>" + "Point: " + String.valueOf(++pointNumber) + " of " + String.valueOf(cursor.getCount()) + "<br/>" + loggedAtStr + DbAccess.getDateString(cursor) + " " + "<br/>" + "Latitude,Longitude: " + latLonS + "<br/>" + "Accuracy within: " + DbAccess.getAccuracy(cursor) + "M<br/>" + "Altitude: " + DbAccess.getAltitude(cursor) + "M<br/>" + "Journey time to here: " + timeTakenString + "<br/>" + ((DbAccess.getComment(cursor) == null || DbAccess.getComment(cursor).length() == 0) ? "" : commentStr + DbAccess.getComment(cursor) + "<br/>") + hyperLink);
                 xmlSerializer.endTag("", "description");
                 xmlSerializer.text(newLine);
