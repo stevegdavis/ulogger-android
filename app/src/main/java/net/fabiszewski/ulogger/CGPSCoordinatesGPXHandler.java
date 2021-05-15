@@ -57,7 +57,7 @@ public class CGPSCoordinatesGPXHandler
                 outputStream.write(("<ele>" + String.valueOf(DbAccess.getAltitude(cursor)) + "</ele>").getBytes());
                 outputStream.write(("<name>" + "µLogger" + "</name>").getBytes());
                 String latLonS = DbAccess.getLatitude(cursor) + "," + DbAccess.getLongitude(cursor);
-                String hyperLink = "&lt;a href=\"https://www.google.com/maps?q=" + latLonS + "&amp;layer=c&amp;cbll=" + latLonS + "&amp;cbp=11\" target=\"_blank | sametab\"&gt;&lt;p&gt;&lt;font color=\"red\"&gt;Street View&lt;/font&gt;&lt;/p&gt;";
+                String hyperLink = "&lt;a href=\"https://www.google.com/maps?q=" + latLonS + "&amp;layer=c&amp;cbll=" + latLonS + "&amp;cbp=11\" target=\"_blank | sametab\"&gt;&lt;font color=\"red\"&gt;Street View&lt;/font&gt;";
                 outputStream.write(("<desc>" + "Device: " + getDeviceName(context) + "&lt;br/&gt;" + "Point: " + String.valueOf(++pointNumber) + " of " + String.valueOf(cursor.getCount()) + "&lt;br/&gt;" + loggedAtStr + DbAccess.getDateString(cursor) + "&lt;br/&gt;" + "Latitude,Longitude: " + DbAccess.getLatitude(cursor) + "," + DbAccess.getLongitude(cursor) + "&lt;br/&gt;" + "Accuracy within: " + DbAccess.getAccuracy(cursor) + "M" + "&lt;br/&gt;" + "Altitude: " + DbAccess.getAltitude(cursor) + "M" + "&lt;br/&gt;" + "Journey time to here: " + timeTakenString + "&lt;br/&gt;" + ((DbAccess.getComment(cursor) == null || DbAccess.getComment(cursor).length() == 0) ? "" : commentStr + DbAccess.getComment(cursor)) +hyperLink + "</desc>").getBytes());
                 outputStream.write(("</wpt>\n").getBytes());
             }
