@@ -21,6 +21,10 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.location.Location;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -76,8 +80,6 @@ public class WaypointFragment extends Fragment implements LoggerTask.LoggerTaskC
     private static final String KEY_URI = "keyPhotoUri";
     private static final String KEY_THUMB = "keyPhotoThumb";
     private static final String KEY_LOCATION = "keyLocation";
-
-    private static final String hiMessage1 = "Hi, click on this link to see my location:";
 
     public static final String LatlonIndentifier = "q=";
     public static final String GoogleMapsLinkStr = "http://maps.google.com/maps?" + LatlonIndentifier;
@@ -141,29 +143,139 @@ public class WaypointFragment extends Fragment implements LoggerTask.LoggerTaskC
     }
 
     private void shareCurrentLocation(View view) {
+        try {
+            final Context context = getActivity().getBaseContext();
+            final String latitudeStr = String.valueOf(location.getLatitude());
+            final String longitudeStr = String.valueOf(location.getLongitude());
+            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.P) {
+                ConnectivityManager cm = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
+                Network activeNetwork = cm.getActiveNetwork();
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/html");
+                boolean isConnected = true;
+                if (activeNetwork == null) {
+                    isConnected = false;
+                }
+                else {
+                    NetworkCapabilities networkCapabilities = cm.getNetworkCapabilities(activeNetwork);
+                    if (networkCapabilities == null || !networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED)) {
+                        isConnected = false;
+                    }
+                }
+                if(!isConnected)    // If no internet connection so use SMS (Android > 9)
+                    intent.setData(Uri.parse("smsto:"));  // This ensures only SMS apps respond
+                intent.putExtra(Intent.EXTRA_EMAIL, "emailaddress@emailaddress.com");
+                intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share_current_location_title));
+                intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_current_location_link_google) + GoogleMapsLinkStr + latitudeStr + "," + longitudeStr);
+                startActivity(Intent.createChooser(intent, getString(R.string.share_current_location_send_title)));
+            }
+            else
+            {
+                // Create a choice intent
+                // "Share", "SMS"
+                final CharSequence choiceList[] = {getString(R.string.share_current_location_choice_share), getString(R.string.share_current_location_choice_sms)};
+                final boolean bl[] = new boolean[choiceList.length];
+                bl[0] = true; // Default setting
+                PackageManager pm = context.getPackageManager();
+
+                final android.app.AlertDialog.Builder ad = new android.app.AlertDialog.Builder(getActivity());//MainActivity.this);
+                ad.setTitle(getString(R.string.share_current_location_dialog_action_title));
+                ad.setSingleChoiceItems(choiceList, 0, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        bl[arg1] = true;
+                        if (arg1 == 0) {
+                            bl[1] = false;
+                        } else if (arg1 == 1) {
+                            bl[0] = false;
+                        }
+                    }
+                });
+                ad.setPositiveButton(getString(R.string.dialogBoxOK), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        TextView tv = null;
+                        int Idx = -1;
+                        Date date = new Date(System.currentTimeMillis());
+                        final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                        String message = getString(R.string.share_current_location_link_google) + GoogleMapsLinkStr + latitudeStr + "," + longitudeStr;
+                        if (bl[0]) {
+                            // Share intent
+                            try {
+                                Intent intent = new Intent(Intent.ACTION_SEND);
+                                intent.setType("text/html");
+                                intent.putExtra(Intent.EXTRA_EMAIL, "emailaddress@emailaddress.com");
+                                intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share_current_location_title));
+                                intent.putExtra(Intent.EXTRA_TEXT, message);
+                                startActivity(Intent.createChooser(intent, getString(R.string.share_current_location_send_title)));
+                                finish();
+                            } catch (android.content.ActivityNotFoundException e) {
+                                if (Logger.DEBUG) {
+                                    Log.d(TAG, e.getMessage());
+                                }
+                            } catch (Exception e) {
+                                if (Logger.DEBUG) {
+                                    Log.d(TAG, e.getMessage());
+                                }
+                            }
+                        } else if (bl[1]) {
+                            // Send SMS
+                            try {
+                                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                                intent.setType("text/plain");
+                                intent.setData(Uri.parse("smsto:"));  // This ensures only SMS apps respond
+                                intent.putExtra("sms_body", message);
+                                //intent.putExtra(Intent.EXTRA_STREAM, attachment);
+                                if (intent.resolveActivity(context.getPackageManager()) != null) {
+                                    startActivity(intent);
+                                }
+                            } catch (android.content.ActivityNotFoundException e) {
+                                if (Logger.DEBUG) {
+                                    Log.d(TAG, e.getMessage());
+                                }
+
+                            } catch (Exception e) {
+                                if (Logger.DEBUG) {
+                                    Log.d(TAG, e.getMessage());
+                                }
+                            }
+                        }
+                    }
+                });
+                ad.setNegativeButton(getString(R.string.dialogBoxCancel), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                ad.show();
+            }
+        } catch (Exception e) {
+            if (Logger.DEBUG) {
+                Log.d(TAG, e.getMessage());
+            }
+        }
+    }
+
+    private void shareCurrentLocationWhat3Words(View view) {
         try
         {
             final Context context = getActivity().getBaseContext();
             What3WordsV3 wrapper = new What3WordsV3("U75NR3E0", context);
 
-//            final String latitudeStr = String.valueOf(location.getLatitude());
-//            final String longitudeStr = String.valueOf(location.getLongitude());
             Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
-//            Date date = new Date(System.currentTimeMillis());
-//            final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-            //String message = getString(R.string.share_current_location_link_msg) + " " + GoogleMapsLinkStr + latitudeStr + "," + longitudeStr + getString(R.string.share_current_location_accuracy) + " " + String.valueOf(location.getAccuracy()) + " metres.)";
             Observable.fromCallable(() -> wrapper.convertTo3wa(new Coordinates(location.getLatitude(), location.getLongitude())).execute())
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(result -> {
                         if (result.isSuccessful()) {
                             //Log.i("MainActivity", String.format("3 word address: %s", result.getWords()));
-                            String message = getString(R.string.share_current_location_link_w3w_msg) + " https://w3w.co/" + result.getWords() + " " + getString(R.string.share_current_location_accuracy) + " " + String.valueOf(location.getAccuracy()) + " metres).";
+                            String message = getString(R.string.share_current_location_link_w3w) + " https://w3w.co/" + result.getWords() + " " + getString(R.string.share_current_location_accuracy) + " " + String.valueOf(location.getAccuracy()) + " metres).";
                             shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.button_share_current_location));
                             shareIntent.putExtra(Intent.EXTRA_TEXT, message);
                             startActivity(Intent.createChooser(shareIntent, getString(R.string.button_share_current_location)));
                         } else {
+                            showToast("Unable to get access to what3words server - please check internet connection");
                             if (Logger.DEBUG) { Log.d(TAG, result.getError().getMessage()); }
                         }
                     });

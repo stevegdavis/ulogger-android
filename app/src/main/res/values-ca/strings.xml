@@ -143,7 +143,14 @@
     <string name="share_link">Enllaç per compartir ruta</string>
 
     <!--Share Current Location-->
-    <string name="share_current_location_link_google_msg">Hola, feu clic en aquest enllaç per veure la meva ubicació:</string>
-    <string name="share_current_location_link_w3w_msg">La meva ubicació actual a what3words:</string>
+    <string name="share_current_location_dialog_action_title">"Action"</string>
+    <string name="share_current_location_choice_share">Compartir</string>
+    <string name="share_current_location_choice_sms">SMS</string>
+    <string name="share_current_location_link_google">Hola, feu clic en aquest enllaç per veure la meva ubicació:</string>
+    <string name="share_current_location_link_w3w">La meva ubicació actual a what3words:</string>
     <string name="share_current_location_accuracy">(Precís dins</string>
+    <string name="share_current_location_title">La meva ubicació GPS</string>
+    <string name="share_current_location_send_title">Envia</string>
+    <string name="dialogBoxOK">D\'acord</string>
+    <string name="dialogBoxCancel">Cancel · lar</string>
 </resources>

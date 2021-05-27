@@ -146,7 +146,14 @@
     <string name="background_location_rationale">L\'autorisation de la localisation en arrière-plan est nécessaire lors d\'un enregistrement sans interaction utilisateur : quand l\'application est automatiquement lancée au démarrage du système ou démarrée par une commande externe.\nPour que la localisation fonctionne, vous devez sélectionner l\'option \"%s\" qui vous sera proposée.\nAller vers les autorisations accordées à l\'application ?</string>
     <string name="background_location_required">Autorisation de localisation en arrière-plan requise</string>
     <!--Share Current Location-->
-    <string name="share_current_location_link_google_msg">Bonjour, cliquez sur ce lien pour voir ma position:</string>
-    <string name="share_current_location_link_w3w_msg">Ma position actuelle sur what3words:</string>
     <string name="share_current_location_accuracy">(Précis à l\'intérieur</string>
+    <string name="share_current_location_dialog_action_title">Action</string>
+    <string name="share_current_location_choice_share">Podíl</string>
+    <string name="share_current_location_choice_sms">SMS</string>
+    <string name="share_current_location_link_google">Cliquez sur ce lien pour voir ma localisation:</string>
+    <string name="share_current_location_link_w3w">Ma position actuelle sur what3words:</string>
+    <string name="share_current_location_title">Ma position GPS</string>
+    <string name="share_current_location_send_title">Envoyer</string>
+    <string name="dialogBoxOK">d\'accord</string>
+    <string name="dialogBoxCancel">Annuler</string>
 </resources>
