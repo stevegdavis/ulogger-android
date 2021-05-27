@@ -141,7 +141,14 @@
     <string name="share_link">Ibilbidearen lotura partekatu</string>
 
     <!--Share Current Location-->
-    <string name="share_current_location_link_google_msg">Kaixo, egin klik esteka honetan nire kokapena ikusteko:</string>
-    <string name="share_current_location_link_w3w_msg">Nire uneko kokapena what3words-en:</string>
     <string name="share_current_location_accuracy">(Zehatzak barruan</string>
+    <string name="share_current_location_dialog_action_title">Ekintza</string>
+    <string name="share_current_location_choice_share">Partekatu</string>
+    <string name="share_current_location_choice_sms">SMS</string>
+    <string name="share_current_location_link_google">Egin klik esteka honetan nire kokapena ikusteko:</string>
+    <string name="share_current_location_link_w3w">Nire uneko kokapena what3words-en:</string>
+    <string name="share_current_location_title">Nire GPS kokapena</string>
+    <string name="share_current_location_send_title">Bidali</string>
+    <string name="dialogBoxOK">Ados</string>
+    <string name="dialogBoxCancel">Utzi</string>
 </resources>

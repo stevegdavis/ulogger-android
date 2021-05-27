@@ -112,7 +112,14 @@
     <string name="provider_gps_network">ネットワークと GPS</string>
 
     <!--Share Current Location-->
-    <string name="share_current_location_link_google_msg">こんにちは、このリンクをクリックして私の場所を確認してください:</string>
-    <string name="share_current_location_link_w3w_msg">what3wordsの私の現在の場所:</string>
     <string name="share_current_location_accuracy">(内で正確</string>
-    </resources>
+    <string name="share_current_location_dialog_action_title">アクション</string>
+    <string name="share_current_location_choice_share">シェア</string>
+    <string name="share_current_location_choice_sms">SMS</string>
+    <string name="share_current_location_link_google">このリンクをクリックして、私の場所を確認してください。</string>
+    <string name="share_current_location_link_w3w">what3wordsでの私の現在の場所：</string>
+    <string name="share_current_location_title">私のGPS位置</string>
+    <string name="share_current_location_send_title">送信</string>
+    <string name="dialogBoxOK">ok</string>
+    <string name="dialogBoxCancel">キャンセル</string>
+</resources>

@@ -148,7 +148,14 @@
     <string name="background_location_required">Требуется разрешение на определение местоположения в фоновом режиме</string>
 
     <!--Share Current Location-->
-    <string name="share_current_location_link_google_msg">Привет, нажмите на эту ссылку, чтобы увидеть мое местоположение:</string>
-    <string name="share_current_location_link_w3w_msg">Мое текущее местоположение на what3words:</string>
     <string name="share_current_location_accuracy">(Точный внутри</string>
+    <string name="share_current_location_dialog_action_title">Действие</string>
+    <string name="share_current_location_choice_share">доля</string>
+    <string name="share_current_location_choice_sms">SMS</string>
+    <string name="share_current_location_link_google">Нажмите на эту ссылку, чтобы увидеть мое местоположение:</string>
+    <string name="share_current_location_link_w3w">Мое текущее местоположение на what3words:</string>
+    <string name="share_current_location_title">Мое местоположение по GPS</string>
+    <string name="share_current_location_send_title">послать</string>
+    <string name="dialogBoxOK">OK</string>
+    <string name="dialogBoxCancel">Отмена</string>
 </resources>

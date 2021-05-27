@@ -160,7 +160,14 @@
     <string name="background_location_required">Background location permission required</string>
 
     <!--Share Current Location-->
-    <string name="share_current_location_link_google_msg">Hi, click on this link to see my location:</string>
-    <string name="share_current_location_link_w3w_msg">My current location on what3words:</string>
+    <string name="share_current_location_dialog_action_title">"Action"</string>
+    <string name="share_current_location_choice_share">Share</string>
+    <string name="share_current_location_choice_sms">SMS</string>
+    <string name="share_current_location_link_google">Click on this link to see my location:</string>
+    <string name="share_current_location_link_w3w">My current location on what3words:</string>
     <string name="share_current_location_accuracy">(Accurate within</string>
+    <string name="share_current_location_title">My GPS Location</string>
+    <string name="share_current_location_send_title">Send</string>
+    <string name="dialogBoxOK">"OK"</string>
+    <string name="dialogBoxCancel">"Cancel"</string>
 </resources>

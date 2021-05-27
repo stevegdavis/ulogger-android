@@ -144,7 +144,14 @@
     <string name="background_location_required">Se requiere permiso de ubicación en segundo plano</string>
 
     <!--Share Current Location-->
-    <string name="share_current_location_link_google_msg">Hola, haz clic en este enlace para ver mi ubicación:</string>
-    <string name="share_current_location_link_w3w_msg">Mi ubicación actual en what3words:</string>
     <string name="share_current_location_accuracy">(Preciso dentro</string>
+    <string name="share_current_location_dialog_action_title">Acción</string>
+    <string name="share_current_location_choice_share">Cuota</string>
+    <string name="share_current_location_choice_sms">SMS</string>
+    <string name="share_current_location_link_google">Haga clic en este enlace para ver mi ubicación:</string>
+    <string name="share_current_location_link_w3w">Mi ubicación actual en what3words:</string>
+    <string name="share_current_location_title">Mi ubicación GPS</string>
+    <string name="share_current_location_send_title">Enviar</string>
+    <string name="dialogBoxOK">OK</string>
+    <string name="dialogBoxCancel">Cancelar</string>
 </resources>

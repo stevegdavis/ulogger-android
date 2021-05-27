@@ -148,7 +148,14 @@
     <string name="background_location_required">Wymagana zgoda na lokalizację w tle</string>
 
     <!--Share Current Location-->
-    <string name="share_current_location_link_google_msg">Cześć, kliknij ten link, aby zobaczyć moją lokalizację:</string>
-    <string name="share_current_location_link_w3w_msg">Moja aktualna lokalizacja na what3words:</string>
     <string name="share_current_location_accuracy">(Dokładny w granicach</string>
+    <string name="share_current_location_dialog_action_title">Akcja</string>
+    <string name="share_current_location_choice_share">Dzielić</string>
+    <string name="share_current_location_choice_sms">SMS</string>
+    <string name="share_current_location_link_google">Kliknij ten link, aby zobaczyć moją lokalizację:</string>
+    <string name="share_current_location_link_w3w">Moja aktualna lokalizacja na what3words:</string>
+    <string name="share_current_location_title">Moja lokalizacja GPS</string>
+    <string name="share_current_location_send_title">Wysłać</string>
+    <string name="dialogBoxOK">dobrze</string>
+    <string name="dialogBoxCancel">Anuluj</string>
 </resources>

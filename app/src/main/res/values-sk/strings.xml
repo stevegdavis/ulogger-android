@@ -145,7 +145,14 @@
     <string name="share_link">Zdielať odkaz na cestu</string>
 
     <!--Share Current Location-->
-    <string name="share_current_location_link_google_msg">Ahoj, kliknutím na tento odkaz zobrazíte moju polohu:</string>
-    <string name="share_current_location_link_w3w_msg">Moja aktuálna poloha na what3words:</string>
     <string name="share_current_location_accuracy">(Presné v rámci</string>
+    <string name="share_current_location_dialog_action_title">Akcia</string>
+    <string name="share_current_location_choice_share">zdieľam</string>
+    <string name="share_current_location_choice_sms">SMS</string>
+    <string name="share_current_location_link_google">Kliknutím na tento odkaz zobrazíte moju polohu:</string>
+    <string name="share_current_location_link_w3w">Moje súčasné umiestnenie na what3words:</string>
+    <string name="share_current_location_title">Moja poloha GPS</string>
+    <string name="share_current_location_send_title">Pošli</string>
+    <string name="dialogBoxOK">Ok</string>
+    <string name="dialogBoxCancel">Zrušiť</string>
 </resources>
